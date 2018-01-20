@@ -19,13 +19,15 @@ public class HomeActivity extends AppCompatActivity {
         Log.i(TAG, "onCreate() called");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-//        getSupportActionBar().hide();
 
         mViewPager = (ViewPager) findViewById(R.id.home_viewpager);
         mTabLayout = (TabLayout) findViewById(R.id.home_tabs);
 
         HomePagesAdapter adapter = new HomePagesAdapter(getSupportFragmentManager());
         adapter.addFragment(new FeedFragment(), "Feed");
+        adapter.addFragment(new ReportsFragment(), "Reports");
+        adapter.addFragment(new PlansFragment(), "Plans");
+        adapter.addFragment(new TrackerFragment(), "Tracker");
         adapter.addFragment(new ProfileFragment(), "Profile");
         mViewPager.setAdapter(adapter);
 
