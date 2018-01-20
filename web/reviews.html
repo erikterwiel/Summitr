@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="eng" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>Mountain Views</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="./index.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link type="text/css" rel="stylesheet" href="./indexstyle.css" />
+    </head>
+    <body>
+        <script>
+        var comprehend = new AWS.Comprehend();
+            comprehend.batchDetectDominantLanguage(params, function (err, data) {
+            if (err) console.log(err, err.stack); // an error occurred
+            else     console.log(data);           // successful response
+            });
+            var comprehend = new AWS.Comprehend({apiVersion: '2017-11-27'});
+            var params = {
+                LanguageCode: en | es, 
+                Text: 'test.json' 
+              };
+              comprehend.detectSentiment(params, function(err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+                else     console.log(data);           // successful response
+              });
+              document.getElementById('reviews').innerHTML("fuck");
+        </script>
+        <div id="reviews">
+            <p></p>
+        </div>
+    </body>
+
+</html>

@@ -1,3 +1,3 @@
-$('.burger').click(function () {
-    $(this).toggleClass('open');
-});
+function signOut() {
+    window.location.href="./signin.html";
+}
