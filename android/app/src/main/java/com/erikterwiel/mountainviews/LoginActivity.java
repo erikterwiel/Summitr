@@ -97,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this,
                             "Sign in success.", Toast.LENGTH_LONG).show();
                     Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                    homeIntent.putExtra("username", mUsername.getText().toString());
                     startActivity(homeIntent);
                 }
 
