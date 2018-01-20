@@ -1,11 +1,21 @@
 var AWS = require("aws-sdk");
 
+var http = require('http');
+http.createServer(function (request, response) {
+  homeRoute(request, response);
+}).listen(8000, '18.218.193.120');
+console.log('Server running at http://<mountainviews.ca>/');
+
+
 AWS.config.update({
   region: "us-west-2",
   endpoint: "http://localhost:8000"
 });
 
 var dynamodb = new AWS.DynamoDB();
+
+
+
 
 var params = {
     TableName : "Movies",

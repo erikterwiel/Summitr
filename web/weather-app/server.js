@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
 
-const apiKey = '2c52b0dc1d3bd1126ff57c0519c61aab';
+const apiKey = 'ce7f3ce99ed7e8e556e3c0a3a51cb8d1';
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,8 +27,16 @@ app.post('/', function (req, res) {
             if(weather.main == undefined){
                 res.render('index', {weather: null, error: 'Error, please try again'});
             } else {
-                let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+                let weatherText = `It's ${weather.main.temp} degrees,
+                    ${weather.main.humidity}% humidity,
+                    the wind is blowing at ${weather.wind.speed} mph,
+                    and it is ${weather.clouds.all}% cloudy
+                    in ${weather.name}!`;
+
+                // let weatherCond = 'There are ${weather.clouds.all} clouds in the sky in ${weather.name}!';
+                // res.render('index', {weather: weatherCond, error: null});
                 res.render('index', {weather: weatherText, error: null});
+                
             }
         }
     });
