@@ -7,11 +7,19 @@ body {
 }
 .nav-item .nav-link {
     color: white;
+    font-size: 20px;
 }
+
+
 
 .nav-item .nav-link:hover {
     opacity: 0.8;
-    text-decoration: underline silver;
+}
+
+.feedtitle{
+    font-size: 30px;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 
 
