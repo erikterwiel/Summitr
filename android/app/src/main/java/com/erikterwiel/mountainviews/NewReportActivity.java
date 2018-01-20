@@ -45,6 +45,7 @@ public class NewReportActivity extends AppCompatActivity {
 
     private User mUser;
     private Photo mPhoto;
+    private Report mReport;
     private AmazonS3Client mS3Client;
     private AmazonDynamoDBClient mDDBClient;
     private DynamoDBMapper mMapper;
@@ -55,7 +56,7 @@ public class NewReportActivity extends AppCompatActivity {
     private ImageView mDone;
     private RecyclerView mRecycler;
     private Button mAdd;
-    private EditText mReport;
+    private EditText mReportInput;
     private PictureAdapter mAdapter;
 
     @Override
@@ -68,6 +69,7 @@ public class NewReportActivity extends AppCompatActivity {
         mLayout = (LinearLayout) findViewById(R.id.new_report_layout);
         mCancel = (ImageView) findViewById(R.id.new_report_cancel);
         mDone = (ImageView) findViewById(R.id.new_report_done);
+
         mRecycler = (RecyclerView) findViewById(R.id.new_report_recycler);
         mAdd = (Button) findViewById(R.id.new_report_add);
         mReport = (EditText) findViewById(R.id.new_report_report);
@@ -83,6 +85,8 @@ public class NewReportActivity extends AppCompatActivity {
         mDDBClient = new AmazonDynamoDBClient(credentialsProvider);
         mMapper = new DynamoDBMapper(mDDBClient);
         mTransferUtility = getTransferUtility(this);
+        mUser = new User();
+        mReport = new Report();
         new PullUser().execute();
 
         mCancel.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +100,7 @@ public class NewReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (mReport.getText().toString().equals("")) {
-                    Toast.makeText(NewPhotoActivity.this, "Please write a trip report", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewReportActivity.this, "Please write a trip report", Toast.LENGTH_LONG).show();
                     return;
                 }
                 Toast.makeText(NewReportActivity.this, "Preparing upload...", Toast.LENGTH_SHORT).show();
@@ -122,15 +126,15 @@ public class NewReportActivity extends AppCompatActivity {
                             Constants.s3BucketName,
                             mUser.getUsername() + "/" + time,
                             new File(Constants.fileOutputPath));
-                    observer.setTransferListener(new NewReportActivity().UploadListener());
+                    observer.setTransferListener(new NewReportActivity.UploadListener());
                     mPhoto = new Photo();
                     mPhoto.setFilename(mUser.getUsername() + "/" + time);
-                    mPhoto.setCaption(mCaption.getText().toString());
-                    mPhoto.setLocation(mLocation.getText().toString());
-                    mUser.addPhoto(mPhoto.getFilename());
-                    new NewPhotoActivity.PushPhoto().execute();
+                    mReport.addPhoto(mPhoto.getFilename());
+                    new PushPhoto().execute();
                 }
-                Toast.makeText(NewPhotoActivity.this, "Trip report uploading!", Toast.LENGTH_LONG).show();
+
+                new PushReport().execute();
+                Toast.makeText(NewReportActivity.this, "Trip report uploading!", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -186,6 +190,23 @@ public class NewReportActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... inputs) {
             mUser = mMapper.load(User.class, getIntent().getStringExtra("username"));
+            return null;
+        }
+    }
+
+    private class PushReport extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... inputs) {
+            mMapper.save(mUser);
+            mMapper.save(mReport);
+            return null;
+        }
+    }
+
+    private class PushPhoto extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... inputs) {
+            mMapper.save(mPhoto);
             return null;
         }
     }
