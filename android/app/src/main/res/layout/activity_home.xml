@@ -38,7 +38,7 @@
             fab:fab_addButtonPlusIconColor="@color/white"
             fab:fab_labelStyle="@style/menu_labels_style">
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/action_a"
+                android:id="@+id/home_new_plan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_title="Plan"
@@ -46,7 +46,7 @@
                 fab:fab_colorNormal="@color/mvAccent"
                 fab:fab_colorPressed="@color/mvAccentDark" />
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/action_b"
+                android:id="@+id/home_new_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_title="Photo"
@@ -54,7 +54,7 @@
                 fab:fab_colorNormal="@color/mvAccent"
                 fab:fab_colorPressed="@color/mvAccentDark"/>
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/action_c"
+                android:id="@+id/home_new_report"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_title="Trip Report"
@@ -62,7 +62,7 @@
                 fab:fab_colorNormal="@color/mvAccent"
                 fab:fab_colorPressed="@color/mvAccentDark"/>
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/action_d"
+                android:id="@+id/home_start_trip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_title="Start Trip"
