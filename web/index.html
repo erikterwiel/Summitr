@@ -12,27 +12,42 @@
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <link type="text/css" rel="stylesheet" href="./indexstyle.css" />
-
     </head>
 
     <body>
     <div>
         <nav class="navbar navbar-expand-sm navbar-success fixed-top">
             <div class="container-fluid">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mb-auto">
                     <a class="navbar-brand" href="./index.html">
                         <img src="Mountain Views Transparent Logo.png" alt="Logo" style="width: 40px; height: 40px;">
                     </a>
-                    <!-- Search bar-->
+                    <form class="form-inline" action="/search.js">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-success" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+                    </form>
+                </ul>
+
+                <ul class="navbar-nav navtitle text-center">
+                    <li class="nav-item">Mountain Views</li>
+                </ul>
+                <ul class ="navbar-nav float-right">
                     <li class="nav-item"><a class="nav-link" href="report.html">Report</a></li>
                     <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
                     <li class="nav-item"><a class="nav-link trackr" href="maps.html">Trackr</a></li>
+                    <li class="nav-item"><a class="nav-link weather" href="weather.html">Weather</a></li>
                     <li class="nav-item"><button type="button" class="btn btn-dark" href="#">Sign-out</button></li>
                 </ul>
             </div>
         </nav>
-
-
     </div>
+
+    <div class="jumbotron jumbotron-fluid section" id="home">
+        <h1 class="feedtitle">Feed</h1>
+    </div>
+
+    <footer>Social media website created and hosted by Mountain Views Inc.</footer>
+
+
     </body>
 </html>
