@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/erikterwiel/MountainViews#readme",
   "dependencies": {
+    "aws-sdk": "^2.185.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "couchbase": "^2.4.3",

@@ -1,20 +1,33 @@
-var Couchbase = require("couchbase");
-var Express = require("express");
-var UUID = require("uuid");
-var BodyParser = require("body-parser");
-var Bcrypt = require("bcryptjs");
+var AWS = require("aws-sdk");
 
-CREATE INDEX `blogbyuser` ON `default`(type, pid);
-
-var app = Express();
-var N1qlQuery = Couchbase.N1qlQuery;
- 
-app.use(BodyParser.json());
-app.use(BodyParser.urlencoded({ extended: true }));
- 
-var cluster = new Couchbase.Cluster("couchbase://localhost");
-var bucket = cluster.openBucket("default", "");
- 
-var server = app.listen(3000, () => {
-    console.log("Listening on port " + server.address().port + "...");
+AWS.config.update({
+  region: "us-west-2",
+  endpoint: "http://localhost:8000"
 });
+
+var dynamodb = new AWS.DynamoDB();
+
+var params = {
+    TableName : "Movies",
+    KeySchema: [       
+        { AttributeName: "year", KeyType: "HASH"},  //Partition key
+        { AttributeName: "title", KeyType: "RANGE" }  //Sort key
+    ],
+    AttributeDefinitions: [       
+        { AttributeName: "year", AttributeType: "N" },
+        { AttributeName: "title", AttributeType: "S" }
+    ],
+    ProvisionedThroughput: {       
+        ReadCapacityUnits: 10, 
+        WriteCapacityUnits: 10
+    }
+};
+
+dynamodb.createTable(params, function(err, data) {
+    if (err) {
+        console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
+    } else {
+        console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
+    }
+});
+
