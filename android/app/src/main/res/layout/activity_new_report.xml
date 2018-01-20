@@ -17,7 +17,7 @@
             android:orientation="horizontal"
             android:background="@color/mvStatusBar">
             <ImageView
-                android:id="@+id/new_photo_cancel"
+                android:id="@+id/new_report_cancel"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_marginEnd="16dp"
@@ -25,7 +25,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_photo_label"
+                android:text="@string/new_report_label"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@color/white"
                 android:layout_weight="0"/>
@@ -34,14 +34,14 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
             <ImageView
-                android:id="@+id/new_photo_done"
+                android:id="@+id/new_report_done"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/ic_done_white_48dp"
                 android:layout_weight="0"/>
         </LinearLayout>
         <Button
-            android:id="@+id/new_photo_add"
+            android:id="@+id/new_report_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -49,34 +49,15 @@
             android:layout_marginEnd="16dp"
             android:background="@color/mvStatusBar"
             android:text="@string/new_photo_button"
-            android:textColor="@color/white"
-            android:visibility="visible"/>
-        <ImageView
-            android:id="@+id/new_photo_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:scaleType="fitCenter"
-            android:visibility="gone"/>
+            android:textColor="@color/white" />
         <EditText
-            android:id="@+id/new_photo_caption"
+            android:id="@+id/new_report_report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:hint="@string/new_photo_caption"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/white"/>
-        <EditText
-            android:id="@+id/new_photo_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:hint="@string/new_photo_location"
+            android:hint="@string/new_report_report"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="@color/white"/>
     </LinearLayout>

@@ -79,6 +79,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        mReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent reportIntent = new Intent(HomeActivity.this, NewReportActivity.class);
+                reportIntent.putExtra("username", mUser.getUsername());
+                startActivity(reportIntent);
+            }
+        });
+
         mStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
