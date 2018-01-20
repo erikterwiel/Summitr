@@ -50,3 +50,23 @@ footer {
     opacity:0.7;
     text-decoration: none;
 }
+
+.breadcrumb {
+    font-size: 20px;
+}
+
+.breadcrumb-crumb {   
+    color: black;
+    padding: .5em;
+    margin: 0;
+}
+.breadcrumb-crumb:hover{
+    text-decoration: none;
+    opacity: 0.7;
+    color: black;
+}
+
+.form-group {
+    padding: .5em;
+    margin: 0;
+}
