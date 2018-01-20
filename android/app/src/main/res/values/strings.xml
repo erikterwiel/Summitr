@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">MountainViews</string>
+    <string name="app_name">Mountain Views</string>
+    <string name="login_user">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_in">Sign In</string>
+    <string name="login_up">Sign Up</string>
+    <string name="login_forgot">Forgot Password</string>
 </resources>
