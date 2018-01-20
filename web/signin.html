@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
+    <title>Mountain Views</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="signin.css" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="login">
-    <h1>Login</h1>
-    <form method="post">
-    <input type="text" name="u" placeholder="Username" required="required"/>
-    <input type="text" name="p" placeholder="Password" required="required"/>
-    <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
-</form>
-</div>
+    <div class="login">
+        <br>
+        <h1 class="text-center">Mountain Views</h1>
+        <h3 class="text-center">Login</h3>
+        <br>
+        <div class="text-center">
+            <img src="Mountain%20Views%20Transparent%20Logo.png" width="20%" height="20%" alt="logo">
+        </div>
+        <form method="post">
+            <div class="text-center">
+                <input type="text" name = "u" class="text-center username" placeholder="Username" required="required"/>
+                <input type="text" class="text-center password" placeholder="Password" required="required"/>
+            </div>
+            <br>
+            <div class="text-center">
+                <button type="submit" class="submitbtn btn btn-light btn-large">Submit</button>
+            </div>
+            <br>
+            <div  class="text-center">
+                <a class="links" href="#">Forgot Password</a><br>
+                <a class="links" href="#">Create an Account</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
