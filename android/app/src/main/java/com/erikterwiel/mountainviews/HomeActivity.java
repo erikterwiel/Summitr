@@ -44,6 +44,14 @@ public class HomeActivity extends AppCompatActivity {
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
 
+        mPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent photoIntent = new Intent(HomeActivity.this, NewPhotoActivity.class);
+                startActivity(photoIntent);
+            }
+        });
+
         mStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
