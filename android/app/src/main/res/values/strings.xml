@@ -5,4 +5,8 @@
     <string name="login_in">Sign In</string>
     <string name="login_up">Sign Up</string>
     <string name="login_forgot">Forgot Password</string>
+    <string name="register_user">Username</string>
+    <string name="register_password">Password</string>
+    <string name="register_confirm">Confirm Password</string>
+    <string name="register_register">Sign up</string>
 </resources>

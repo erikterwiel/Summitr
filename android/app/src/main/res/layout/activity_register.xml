@@ -14,23 +14,18 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/login_user"/>
+        android:hint="@string/register_user"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/login_password"/>
+        android:hint="@string/register_password"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/register_confirm"/>
     <Button
         android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:text="@string/login_in"/>
-    <Button
-        android:id="@+id/login_up"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:text="@string/login_up"/>
-    <Button
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:text="@string/login_forgot"/>
+        android:text="@string/register_register"/>
 
 </LinearLayout>
