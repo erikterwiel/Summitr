@@ -97,7 +97,7 @@ public class NewPhotoActivity extends AppCompatActivity {
                 }
                 Toast.makeText(NewPhotoActivity.this, "Preparing upload...", Toast.LENGTH_SHORT).show();
                 Calendar calendar = Calendar.getInstance();
-                String time = "" + (calendar.getTimeInMillis() / 10000);
+                String time = "" + (calendar.getTimeInMillis());
                 File folder = new File("sdcard/Pictures/MountainViews/temp");
                 if (!folder.exists()) folder.mkdir();
                 File toSend = new File(folder, "toSend.png");

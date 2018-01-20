@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/mvPrimary">
     <LinearLayout
+        android:id="@+id/new_report_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -26,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/new_report_label"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:textColor="@color/white"
                 android:layout_weight="0"/>
             <View
@@ -40,6 +41,12 @@
                 android:src="@drawable/ic_done_white_48dp"
                 android:layout_weight="0"/>
         </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/new_report_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
         <Button
             android:id="@+id/new_report_add"
             android:layout_width="match_parent"
@@ -54,11 +61,12 @@
             android:id="@+id/new_report_report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:padding="16dp"
+            android:gravity="start|top"
+            android:layout_margin="16dp"
             android:hint="@string/new_report_report"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/white"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:background="@color/white"
+            android:minLines="16"/>
     </LinearLayout>
 </ScrollView>
