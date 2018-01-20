@@ -1,5 +1,4 @@
 body,html {
-    background-color: silver;
     height: 100%;
     width: 100%;
     padding: 0 1% 1%;
@@ -32,12 +31,3 @@ footer {
 .nav-item .nav-link:hover {
     opacity: 0.8;
 }
-
-.feedtitle{
-    font-size: 30px;
-    margin-left: 2%;
-    margin-top: 2%;
-}
-
-
-
