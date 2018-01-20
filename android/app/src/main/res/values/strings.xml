@@ -12,6 +12,8 @@
     <string name="register_password">Password</string>
     <string name="register_confirm">Confirm Password</string>
     <string name="register_register">Sign up</string>
+    <string name="home_pulling">Loading Account</string>
+    <string name="home_wait">Please wait...</string>
     <string name="start_start">Start Trip</string>
     <string name="start_destination">Destination</string>
     <string name="start_myo">For your safety, please connect your Myo Armband</string>
@@ -19,6 +21,8 @@
     <string name="new_photo_button">Add Photo</string>
     <string name="new_photo_caption">Caption</string>
     <string name="new_photo_location">Location</string>
+    <string name="new_report_label">New Report</string>
+    <string name="new_report_report">Report</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
