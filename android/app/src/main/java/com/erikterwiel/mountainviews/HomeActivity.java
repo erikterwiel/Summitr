@@ -74,6 +74,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent photoIntent = new Intent(HomeActivity.this, NewPhotoActivity.class);
+                photoIntent.putExtra("username", mUser.getUsername());
                 startActivity(photoIntent);
             }
         });

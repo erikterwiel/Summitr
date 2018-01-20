@@ -4,6 +4,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBAttribut
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBHashKey;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @DynamoDBTable(tableName = "users")
@@ -19,6 +20,15 @@ public class User {
     private List<String> mActivity;
     private double mLongitude;
     private double mLatitude;
+
+    public User() {
+        mFollowing = new ArrayList<>();
+        mFollowers = new ArrayList<>();
+        mPlans = new ArrayList<>();
+        mPosts = new ArrayList<>();
+        mPhotos = new ArrayList<>();
+        mActivity = new ArrayList<>();
+    }
 
     @DynamoDBHashKey(attributeName = "username")
     public String getUsername() {
@@ -108,5 +118,29 @@ public class User {
 
     public void setLatitude(double latitude) {
         mLatitude = latitude;
+    }
+
+    public void addFollowing(String toAdd) {
+        mFollowing.add(toAdd);
+    }
+
+    public void addFollower(String toAdd) {
+        mFollowers.add(toAdd);
+    }
+
+    public void addPlan(String toAdd) {
+        mPlans.add(toAdd);
+    }
+
+    public void addPost(String toAdd) {
+        mPosts.add(toAdd);
+    }
+
+    public void addPhoto(String toAdd) {
+        mPhotos.add(toAdd);
+    }
+
+    public void addActivity(String toAdd) {
+        mActivity.add(toAdd);
     }
 }
