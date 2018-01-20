@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "It is a way for adventurers to figure out the weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "command"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Mountain Views"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "Sterling Finn",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  }
+}

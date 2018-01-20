@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="com.thalmic:myosdk-0.10.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/myosdk-0.10.0.aar/9984e32a597957edf41c46d381412bed/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/myosdk-0.10.0.aar/9984e32a597957edf41c46d381412bed/jars/libs/native-libs.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/myosdk-0.10.0.aar/9984e32a597957edf41c46d381412bed/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

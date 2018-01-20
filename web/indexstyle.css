@@ -1,5 +1,11 @@
-body {
-    background-color: silver;
+body,html {
+    height: 100%;
+    width: 100%;
+    padding: 0 1% 1%;
+}
+
+.navbar-brand:hover{
+    opacity: 0.7;
 }
 
 .navbar{
@@ -10,17 +16,18 @@ body {
     font-size: 20px;
 }
 
+footer {
+    text-align: right;
+    bottom: 2px;
+    right: 3px;
+}
 
+.navtitle{
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+}
 
 .nav-item .nav-link:hover {
     opacity: 0.8;
 }
-
-.feedtitle{
-    font-size: 30px;
-    margin-left: 2%;
-    margin-top: 2%;
-}
-
-
-
