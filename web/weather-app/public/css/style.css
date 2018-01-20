@@ -2,6 +2,9 @@ body {
     width: 800px;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
+    background-image: url("https://pixnio.com/free-images/2017/05/31/2017-05-31-11-00-57.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .container {
     width: 600px;
