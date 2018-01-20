@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="mvPrimary">#0CA948</color>
     <color name="mvStatusBar">#2e7d32</color>
+    <color name="mvAccent">#FF4081</color>
+    <color name="mvAccentDark">#F50057</color>
     <color name="black_semi_transparent">#B2000000</color>
     <color name="background">#e5e5e5</color>
     <color name="half_black">#808080</color>

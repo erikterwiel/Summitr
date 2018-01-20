@@ -11,7 +11,8 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/mvPrimary">
         <android.support.design.widget.TabLayout
             android:id="@+id/home_tabs"
             android:layout_width="match_parent"
@@ -32,24 +33,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            fab:fab_addButtonColorNormal="@color/white"
-            fab:fab_addButtonColorPressed="@color/white_pressed"
-            fab:fab_addButtonPlusIconColor="@color/half_black"
+            fab:fab_addButtonColorNormal="@color/mvAccent"
+            fab:fab_addButtonColorPressed="@color/mvAccentDark"
+            fab:fab_addButtonPlusIconColor="@color/white"
             fab:fab_labelStyle="@style/menu_labels_style">
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/action_a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_title=""
-                fab:fab_colorNormal="@color/white"
-                fab:fab_colorPressed="@color/white_pressed"/>
+                fab:fab_title="Plan"
+                fab:fab_icon="@drawable/ic_event_white_48dp"
+                fab:fab_colorNormal="@color/mvAccent"
+                fab:fab_colorPressed="@color/mvAccentDark" />
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/action_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_title="Action with a very"
-                fab:fab_colorNormal="@color/white"
-                fab:fab_colorPressed="@color/white_pressed"/>
+                fab:fab_title="Photo"
+                fab:fab_icon="@drawable/ic_insert_photo_white_48dp"
+                fab:fab_colorNormal="@color/mvAccent"
+                fab:fab_colorPressed="@color/mvAccentDark"/>
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/action_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_title="Trip Report"
+                fab:fab_icon="@drawable/ic_assignment_white_48dp"
+                fab:fab_colorNormal="@color/mvAccent"
+                fab:fab_colorPressed="@color/mvAccentDark"/>
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/action_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_title="Start Trip"
+                fab:fab_icon="@drawable/ic_flag_white_48dp"
+                fab:fab_colorNormal="@color/mvAccent"
+                fab:fab_colorPressed="@color/mvAccentDark"/>
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
     </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>
