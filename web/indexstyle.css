@@ -37,6 +37,9 @@ footer {
     margin-top:1.5%;
     color:white;
 }
+.btn:hover{
+    cursor: pointer;
+}
 
 .title{
     color:white;

@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <title>Mountain Views</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="./indexstyle.css" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Marker Labels</title>
+    <title>Trackr</title>
     <style>
 
       #map {
@@ -82,6 +93,32 @@
     </script>
   </head>
   <body>
+    <div>
+      <nav class="navbar navbar-expand-sm navbar-success fixed-top">
+        <div class="container-fluid">
+          <ul class="navbar-nav mb-auto">
+            <a class="navbar-brand" href="./index.html">
+              <img src="Mountain Views Transparent Logo.png" alt="Logo" style="width: 40px; height: 40px;">
+            </a>
+            <form class="form-inline" action="/search.js">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-success" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+            </form>
+          </ul>
+
+          <ul class="navbar-nav navtitle text-center">
+            <li class="nav-item"><a class="title" href="index.html">Mountain Views</a></li>
+          </ul>
+          <ul class ="navbar-nav float-right">
+            <li class="nav-item"><a class="nav-link" href="report.html">Report</a></li>
+            <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+            <li class="nav-item"><a class="nav-link trackr" href="maps.html">Trackr</a></li>
+            <li class="nav-item"><a class="nav-link weather" href="weather.html">Weather</a></li>
+            <li class="nav-item"><button type="button"  onclick="signOut()" class="btn btn-dark" href="#">Sign-out</button></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <div id="map"></div>
   </body>
 </html>
