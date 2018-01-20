@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+}
+
+.nav-item .nav-link {
+    color: white;
+}
+
+.nav-item .nav-link:hover {
+    opacity: 0.8;
+}
+
