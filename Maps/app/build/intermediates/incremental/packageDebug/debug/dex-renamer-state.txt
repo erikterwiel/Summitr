@@ -1,0 +1,4 @@
+#Fri Jan 19 22:23:57 EST 2018
+base.0=/Users/thomasgeorge/Desktop/MountainViews/MountainViews/Maps/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
