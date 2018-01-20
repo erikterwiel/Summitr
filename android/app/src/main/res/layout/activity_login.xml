@@ -16,13 +16,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_user"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:text="autouser"/>
     <EditText
         android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_password"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:text="Qwertyu1"/>
     <Button
         android:id="@+id/login_in"
         android:layout_width="256dp"
