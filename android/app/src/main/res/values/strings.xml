@@ -5,6 +5,8 @@
     <string name="login_in">Sign In</string>
     <string name="login_up">Sign Up</string>
     <string name="login_forgot">Forgot Password</string>
+    <string name="login_dialog">Signing in</string>
+    <string name="login_wait">Please wait...</string>
     <string name="register_user">Username</string>
     <string name="register_email">Email</string>
     <string name="register_password">Password</string>

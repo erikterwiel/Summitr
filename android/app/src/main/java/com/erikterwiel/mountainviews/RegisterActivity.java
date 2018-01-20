@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     "Network error, try again", Toast.LENGTH_LONG).show();
                             exception.printStackTrace();
                         }
-                    };git
+                    };
                     CognitoUserAttributes userAttributes = new CognitoUserAttributes();
                     userAttributes.addAttribute("email", mEmail.getText().toString());
                     userPool.signUpInBackground(mUsername.getText().toString(),
