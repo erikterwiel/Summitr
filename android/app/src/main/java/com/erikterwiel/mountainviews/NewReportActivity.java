@@ -46,6 +46,7 @@ public class NewReportActivity extends AppCompatActivity {
     private User mUser;
     private Photo mPhoto;
     private Report mReport;
+    private Recent mRecent;
     private AmazonS3Client mS3Client;
     private AmazonDynamoDBClient mDDBClient;
     private DynamoDBMapper mMapper;
@@ -94,6 +95,7 @@ public class NewReportActivity extends AppCompatActivity {
         mTransferUtility = getTransferUtility(this);
         mUser = new User();
         mReport = new Report();
+        mRecent = new Recent();
         new PullUser().execute();
 
         mCancel.setOnClickListener(new View.OnClickListener() {
@@ -111,11 +113,10 @@ public class NewReportActivity extends AppCompatActivity {
                     return;
                 }
                 Toast.makeText(NewReportActivity.this, "Preparing upload...", Toast.LENGTH_SHORT).show();
-                Calendar calendar = Calendar.getInstance();
-                String time = "" + (calendar.getTimeInMillis());
                 File folder = new File("sdcard/Pictures/MountainViews/temp");
                 if (!folder.exists()) folder.mkdir();
                 for (int i = 0; i < mBitmaps.size(); i++) {
+                    String time = "" + (Calendar.getInstance().getTimeInMillis());
                     File toSend = new File(folder, "toSend.png");
                     try {
                         toSend.createNewFile();
@@ -145,6 +146,9 @@ public class NewReportActivity extends AppCompatActivity {
                 mReport.setDistance(mDistance.getText().toString());
                 mReport.setReport(mReportInput.getText().toString());
                 mUser.addPost(mReport.getTitle());
+                mRecent.setTime(Calendar.getInstance().getTimeInMillis());
+                mRecent.setIdentifier(mReport.getTitle());
+                mRecent.setType("report");
                 new PushReport().execute();
                 Toast.makeText(NewReportActivity.this, "Trip report uploading!", Toast.LENGTH_LONG).show();
                 finish();
@@ -211,6 +215,7 @@ public class NewReportActivity extends AppCompatActivity {
         protected Void doInBackground(Void... inputs) {
             mMapper.save(mUser);
             mMapper.save(mReport);
+            mMapper.save(mRecent);
             return null;
         }
     }
