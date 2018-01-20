@@ -33,4 +33,5 @@ dependencies {
     implementation 'com.amazonaws:aws-android-sdk-ddb-mapper:2.6.6'
     implementation 'com.amazonaws:aws-android-sdk-s3:2.6.6'
     implementation 'com.amazonaws:aws-android-sdk-sns:2.6.6'
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
 }
