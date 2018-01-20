@@ -5,6 +5,9 @@ body, html{
   background-color: #0CA948;
 }
 
+h1, h3{
+  color: white;
+}
 .links{
   color: azure;
 }
