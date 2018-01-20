@@ -7,7 +7,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 import java.util.ArrayList;
 import java.util.List;
 
-@DynamoDBTable(tableName = "photos")
+@DynamoDBTable(tableName = "reports")
 public class Report {
 
     private String mTitle;

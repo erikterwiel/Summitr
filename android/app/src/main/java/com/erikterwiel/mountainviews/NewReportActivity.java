@@ -54,6 +54,10 @@ public class NewReportActivity extends AppCompatActivity {
     private LinearLayout mLayout;
     private ImageView mCancel;
     private ImageView mDone;
+    private EditText mTitle;
+    private EditText mLocation;
+    private EditText mDistance;
+    private EditText mDate;
     private RecyclerView mRecycler;
     private Button mAdd;
     private EditText mReportInput;
@@ -69,10 +73,13 @@ public class NewReportActivity extends AppCompatActivity {
         mLayout = (LinearLayout) findViewById(R.id.new_report_layout);
         mCancel = (ImageView) findViewById(R.id.new_report_cancel);
         mDone = (ImageView) findViewById(R.id.new_report_done);
-
+        mTitle = (EditText) findViewById(R.id.new_report_title);
+        mLocation = (EditText) findViewById(R.id.new_report_location);
+        mDistance = (EditText) findViewById(R.id.new_report_distance);
+        mDate = (EditText) findViewById(R.id.new_report_date);
         mRecycler = (RecyclerView) findViewById(R.id.new_report_recycler);
         mAdd = (Button) findViewById(R.id.new_report_add);
-        mReport = (EditText) findViewById(R.id.new_report_report);
+        mReportInput = (EditText) findViewById(R.id.new_report_report);
         mRecycler.setLayoutManager(new LinearLayoutManager(
                 this, LinearLayoutManager.HORIZONTAL, false));
         mAdapter = new PictureAdapter(mBitmaps);
@@ -99,7 +106,7 @@ public class NewReportActivity extends AppCompatActivity {
         mDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mReport.getText().toString().equals("")) {
+                if (mReportInput.getText().toString().equals("")) {
                     Toast.makeText(NewReportActivity.this, "Please write a trip report", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -132,7 +139,12 @@ public class NewReportActivity extends AppCompatActivity {
                     mReport.addPhoto(mPhoto.getFilename());
                     new PushPhoto().execute();
                 }
-
+                mReport.setTitle(mTitle.getText().toString());
+                mReport.setLocation(mLocation.getText().toString());
+                mReport.setDate(mDate.getText().toString());
+                mReport.setDistance(mDistance.getText().toString());
+                mReport.setReport(mReportInput.getText().toString());
+                mUser.addPost(mReport.getTitle());
                 new PushReport().execute();
                 Toast.makeText(NewReportActivity.this, "Trip report uploading!", Toast.LENGTH_LONG).show();
                 finish();
