@@ -1,0 +1,27 @@
+{
+  "name": "MountainViews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikterwiel/MountainViews.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikterwiel/MountainViews/issues"
+  },
+  "homepage": "https://github.com/erikterwiel/MountainViews#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "couchbase": "^2.4.3",
+    "express": "^4.16.2",
+    "uuid": "^3.2.1"
+  }
+}
