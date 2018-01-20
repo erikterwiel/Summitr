@@ -1,12 +1,18 @@
-body{
-    background-color: black;
+body {
+    background-color: silver;
 }
 
+.navbar{
+    background-color: #0CA948;
+}
 .nav-item .nav-link {
     color: white;
 }
 
 .nav-item .nav-link:hover {
     opacity: 0.8;
+    text-decoration: underline silver;
 }
+
+
 
