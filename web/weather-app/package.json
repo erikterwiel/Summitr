@@ -1,10 +1,11 @@
 {
-  "name": "weather-app",
+  "name": "weatherapp",
   "version": "1.0.0",
   "description": "It is a way for adventurers to figure out the weather",
   "main": "index.js",
   "scripts": {
-    "test": "command"
+    "test": "command",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,6 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2"
-  }
+  },
+  "devDependencies": {}
 }
