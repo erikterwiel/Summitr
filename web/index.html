@@ -42,7 +42,7 @@
                     <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
                     <li class="nav-item"><a class="nav-link trackr" href="maps.html">Trackr</a></li>
                     <li class="nav-item"><a class="nav-link weather" href="weather.html">Weather</a></li>
-                    <li class="nav-item"><button type="button" class="btn btn-dark" href="#">Sign-out</button></li>
+                    <li class="nav-item"><button type="button"  onclick="signOut()" class="btn btn-dark" href="#">Sign-out</button></li>
                 </ul>
             </div>
         </nav>
@@ -63,7 +63,11 @@
         </div>
 
     <footer>Social media website created and hosted by Mountain Views Inc.</footer>
-
+    <script>
+        function signOut() {
+            window.location.href="./signin.html";
+        }
+    </script>
 
     </body>
 </html>
