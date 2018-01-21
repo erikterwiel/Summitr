@@ -74,6 +74,10 @@
 //     });
 // }
 //
-// function signOut() {
-//     window.location.href="./signin.html";
-// }
+function signOut() {
+    window.location.href="./signin.html";
+}
+
+function signIn(){
+    window.location.href="./index.html";
+}
