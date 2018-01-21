@@ -1,6 +1,5 @@
 import boto3
 import bs4
-from bs4 import BeautifulSoup
 
 dynamodb = boto3.resource('dynamodb')
 
@@ -11,8 +10,8 @@ with open("index.html") as inf:
     txt = inf.read()
     soup = bs4.BeautifulSoup(txt)
 
-new_link = soup.new_tag("div", class='post')
-soup.body.append(new_link)
+new_tag = soup.new_tag('div class="posts"')
+soup.body.insert(4, new_tag)
 
 with open("index.html", "w") as outf:
     outf.write(str(soup))

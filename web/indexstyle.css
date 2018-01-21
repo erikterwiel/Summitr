@@ -74,6 +74,11 @@ footer {
 .posts_main{
     margin:1%;
 }
+.posts{
+    padding:1%;
+    background-color:#e8eaee;
+    margin-bottom:1%;
+}
 
 /* light green #0ca948
 dark green #2e7d32
