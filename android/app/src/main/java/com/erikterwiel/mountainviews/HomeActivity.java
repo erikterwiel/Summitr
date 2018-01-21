@@ -1,6 +1,7 @@
 package com.erikterwiel.mountainviews;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.os.AsyncTask;
@@ -14,8 +15,10 @@ import android.view.View;
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.s3.AmazonS3Client;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -93,6 +96,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent startIntent = new Intent(HomeActivity.this, StartActivity.class);
                 startIntent.putExtra("username", mUser.getUsername());
+                startIntent.putExtra("latitude", mUser.getLatitude());
+                startIntent.putExtra("longitude", mUser.getLongitude());
                 startActivity(startIntent);
             }
         });
@@ -149,5 +154,25 @@ public class HomeActivity extends AppCompatActivity {
             mMapper.save(mUser);
             return null;
         }
+    }
+
+    public TransferUtility getTransferUtility(Context context) {
+        AmazonS3Client s3Client = getS3Client(context.getApplicationContext());
+        TransferUtility mTransferUtility = new TransferUtility(
+                s3Client, context.getApplicationContext());
+        return mTransferUtility;
+    }
+
+    public static AmazonS3Client getS3Client(Context context) {
+        AmazonS3Client sS3Client = new AmazonS3Client(getCredProvider(context.getApplicationContext()));
+        return sS3Client;
+    }
+
+    private static CognitoCachingCredentialsProvider getCredProvider(Context context) {
+        CognitoCachingCredentialsProvider sCredProvider = new CognitoCachingCredentialsProvider(
+                context.getApplicationContext(),
+                Constants.cognitoUnauthPoolID,
+                Regions.US_EAST_1);
+        return sCredProvider;
     }
 }

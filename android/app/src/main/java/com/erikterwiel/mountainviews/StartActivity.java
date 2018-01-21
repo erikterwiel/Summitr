@@ -99,9 +99,12 @@ public class StartActivity extends AppCompatActivity {
                     "Trip!";
             PublishRequest publishRequest = new PublishRequest(
                     Constants.snsARN, msg, subject);
-//            snsClient.publish(publishRequest);
+            snsClient.publish(publishRequest);
             Intent tripIntent = new Intent(StartActivity.this, TripActivity.class);
             tripIntent.putExtra("myo", mBluetooth);
+            tripIntent.putExtra("username", getIntent().getStringExtra("username"));
+            tripIntent.putExtra("latitude", getIntent().getDoubleExtra("latitude", 0));
+            tripIntent.putExtra("longitude", getIntent().getDoubleExtra("longitude", 0));
             startActivity(tripIntent);
             return null;
         }
