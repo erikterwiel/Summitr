@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
     }
     buildTypes {
         release {
@@ -41,4 +42,5 @@ dependencies {
     }
     implementation 'com.thalmic:myosdk:0.10.+@aar'
     implementation 'com.google.android.gms:play-services:11.8.0'
+    implementation 'com.google.android.gms:play-services:9.8.0'
 }
