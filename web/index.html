@@ -8,17 +8,66 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-<script src="./index.js"></script>
-<script src="/path/to/aws-cognito-sdk.min.js"></script>
-<script src="/path/to/amazon-cognito-identity.min.js"></script>
-<!-- optional: only if you use other AWS services -->
-<script src="/path/to/aws-sdk-2.6.10.js"></script>
+<script src="./index.js"></script><!--
+        <script src="/path/to/aws-cognito-sdk.min.js"></script>
+        <script src="/path/to/amazon-cognito-identity.min.js"></script>
+        optional: only if you use other AWS services
+        <script src="/path/to/aws-sdk-2.6.10.js"></script>-->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="./indexstyle.css" rel="stylesheet" type="text/css"/>
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.185.0.min.js"></script>
 <link href="./Mountain Views Transparent Logo.png" rel="icon" sizes="16x16" type="image/gif"/>
 </head>
+<script>
+        $.ajax({
+            type: "title",
+            url: "./nltk.py",
+            data: { param: "text"}
+        }).done(function() {
+            console.log("hello world Navraj");
+        });
+
+
+        function numStars (num) {
+
+            var star = document.getElementById('starboy');
+            var star1 = document.getElementById('starboy1');
+            var star2 = document.getElementById('starboy2');
+            var star3 = document.getElementById('starboy3');
+            var star4 = document.getElementById('starboy4');
+            switch (num){
+                case 0:
+                    break;
+                case 1:
+                    star.style.display="block";
+                    break;
+                case 2:
+                    star.style.display="block";
+                    star1.style.display="block"; 
+                    break;                   
+                case 3:
+                    star.style.display="block";
+                    star1.style.display="block";
+                    star2.style.display="block";
+                    break;
+                case 4:
+                    star.style.display="block";
+                    star1.style.display="block";
+                    star2.style.display="block";
+                    star3.style.display="block";
+                    break;
+                case 5:
+                    star.style.display="block";
+                    star1.style.display="block";
+                    star2.style.display="block";
+                    star3.style.display="block";
+                    star4.style.display="block";
+                    break;
+            }
+        }
+
+    </script>
 <body>
 <div>
 <nav class="navbar navbar-expand-sm navbar-success fixed-top">
@@ -46,6 +95,14 @@
 </nav>
 </div>
 <div class="jumbotron jumbotron-fluid section" id="home" style="background-color: white;">
+<!--
+            <i id="starboy" class="fa fa-star" aria-hidden="true"></i>
+            <i id="starboy1" class="fa fa-star" aria-hidden="true"></i>
+            <i id="starboy2" class="fa fa-star" aria-hidden="true"></i>
+            <i id="starboy3" class="fa fa-star" aria-hidden="true"></i>
+            <i id="starboy4" class="fa fa-star" aria-hidden="true"></i>
+            
+        -->
 <!-- <div class="dropdown">
             <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
                 Create
@@ -62,7 +119,7 @@
 <li><a class="active breadcrumb-crumb" data-target="#myModal" data-toggle="modal" href="#">Feed</a></li> /
                 <li><a class="breadcrumb-crumb" data-target="#genericModal" data-toggle="modal" href="#">Post</a></li> /
                 <li><a class="breadcrumb-crumb" data-target="#planModal" data-toggle="modal" href="#">Plan</a></li> /
-                <li><a class="breadcrumb-crumb" data-target="#reportModal" data-toggle="modal" href="#">Report/Blog</a></li>
+                <li><a class="breadcrumb-crumb" data-target="#reportModal" data-toggle="modal" href="#">Report-Blog</a></li>
 </ul>
 </div>
 <div class="container">
@@ -203,10 +260,6 @@
 </div>
 </div>
 </div>
-<div class="posts_main">
-    
-</div>
+</div><div class="posts"><img src="githubprof.png"/><p>test</p></div class="posts"></body>
 <footer>Social media website created and hosted by Mountain Views Inc.</footer>
-</div>
-</body>
 </html>

@@ -8,6 +8,10 @@ body,html {
     opacity: 0.7;
 }
 
+#starboy{
+    display: none;
+}
+
 .navbar{
     background-color: #0CA948;
 }
@@ -73,6 +77,14 @@ footer {
 
 .posts_main{
     margin:1%;
+}
+.posts{
+    padding:1%;
+    background-color:#e8eaee;
+    margin-bottom:1%;
+}
+#post{
+    background-color:black;
 }
 
 /* light green #0ca948
