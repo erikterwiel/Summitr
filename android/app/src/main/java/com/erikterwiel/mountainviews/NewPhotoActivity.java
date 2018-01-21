@@ -42,6 +42,7 @@ public class NewPhotoActivity extends AppCompatActivity {
     private Bitmap mBitmap;
     private User mUser;
     private Photo mPhoto;
+    private Recent mRecent;
     private AmazonS3Client mS3Client;
     private TransferUtility mTransferUtility;
     private AmazonDynamoDBClient mDDBClient;
@@ -68,6 +69,9 @@ public class NewPhotoActivity extends AppCompatActivity {
         mDDBClient = new AmazonDynamoDBClient(credentialsProvider);
         mMapper = new DynamoDBMapper(mDDBClient);
         mTransferUtility = getTransferUtility(this);
+        mUser = new User();
+        mPhoto = new Photo();
+        mRecent = new Recent();
         new PullUser().execute();
 
 
@@ -97,7 +101,7 @@ public class NewPhotoActivity extends AppCompatActivity {
                 }
                 Toast.makeText(NewPhotoActivity.this, "Preparing upload...", Toast.LENGTH_SHORT).show();
                 Calendar calendar = Calendar.getInstance();
-                String time = "" + (calendar.getTimeInMillis() / 10000);
+                String time = "" + (calendar.getTimeInMillis());
                 File folder = new File("sdcard/Pictures/MountainViews/temp");
                 if (!folder.exists()) folder.mkdir();
                 File toSend = new File(folder, "toSend.png");
@@ -123,6 +127,9 @@ public class NewPhotoActivity extends AppCompatActivity {
                 mPhoto.setCaption(mCaption.getText().toString());
                 mPhoto.setLocation(mLocation.getText().toString());
                 mUser.addPhoto(mPhoto.getFilename());
+                mRecent.setTime(Calendar.getInstance().getTimeInMillis());
+                mRecent.setIdentifier(mPhoto.getFilename());
+                mRecent.setType("photo");
                 new PushPhoto().execute();
                 Toast.makeText(NewPhotoActivity.this, "Photo uploading!", Toast.LENGTH_LONG).show();
                 finish();
@@ -209,6 +216,7 @@ public class NewPhotoActivity extends AppCompatActivity {
         protected Void doInBackground(Void... inputs) {
             mMapper.save(mPhoto);
             mMapper.save(mUser);
+            mMapper.save(mRecent);
             return null;
         }
     }

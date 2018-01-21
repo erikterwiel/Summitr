@@ -10,5 +10,9 @@
 /android/app/src/main/java/com/erikterwiel/mountainviews/Constants.java
 android/app/src/main/java/com/erikterwiel/mountainviews/Constants.java
 android/build/android-profile
+<<<<<<< HEAD
 /web/LightsailDefaultPrivateKey-us-east-2.pem
 web/LightsailDefaultPrivateKey-us-east-2.pem    
+=======
+web/danilocsvrsa-encrypted.java
+>>>>>>> 4263e9358063850e55541d499247c0325cd0cfb3

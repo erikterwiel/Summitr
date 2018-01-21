@@ -1,0 +1,8 @@
+{
+    "ForumName": {"S": "Amazon DynamoDB"},
+    "Subject": {"S": "New discussion thread"},
+    "Message": {"S": "First post in this thread"},
+    "LastPostedBy": {"S": "fred@example.com"},
+    "LastPostDateTime": {"S": "201603190422"}
+}
+ 

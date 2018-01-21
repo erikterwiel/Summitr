@@ -22,6 +22,10 @@
     <string name="new_photo_caption">Caption</string>
     <string name="new_photo_location">Location</string>
     <string name="new_report_label">New Report</string>
+    <string name="new_report_title">Title</string>
+    <string name="new_report_location">Location</string>
+    <string name="new_report_distance">Distance</string>
+    <string name="new_report_date">Date</string>
     <string name="new_report_report">Report</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="tab_text_1">Tab 1</string>
