@@ -18,3 +18,5 @@ exports.handle()=function(e,ctx,callback){
 function signOut() {
     window.location.href="./signin.html";
 }
+
+
