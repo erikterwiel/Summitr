@@ -1,8 +1,20 @@
 import boto3
+import bs4
+
 dynamodb = boto3.resource('dynamodb')
 
 table = dynamodb.Table('test')
 client = boto3.client('comprehend',region_name='us-west-2')
+
+with open("index.html") as inf:
+    txt = inf.read()
+    soup = bs4.BeautifulSoup(txt)
+
+new_link = soup.new_tag("img", src="githubprof.png")
+soup.body.append(new_link)
+
+with open("index.html", "w") as outf:
+    outf.write(str(soup))
 
 def sentimenter(txt):
     response = table.get_item(
