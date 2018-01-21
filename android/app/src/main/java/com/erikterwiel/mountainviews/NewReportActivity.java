@@ -175,7 +175,7 @@ public class NewReportActivity extends AppCompatActivity {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
                 mBitmaps.add(bitmap.createScaledBitmap(
-                        bitmap, bitmap.getWidth()/3, bitmap.getHeight()/3, false));
+                        bitmap, bitmap.getWidth()/ 5, bitmap.getHeight()/ 5, false));
                 mAdapter.itemAdded(mBitmaps.size() - 1);
                 Log.i(TAG, "item fucking isnert");
             } catch (IOException ex) {
