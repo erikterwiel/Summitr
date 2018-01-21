@@ -4,9 +4,11 @@
     <meta charset="utf-8" />
     <title>Mountain Views</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.185.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -29,12 +31,12 @@
         </div>
         <form method="post">
             <div class="text-center">
-                <input type="text" name = "u" class="text-center username" placeholder="Username" required="required"/>
-                <input type="text" class="text-center password" placeholder="Password" required="required"/>
+                <input type="text" name = "u" about="./index.js" class="text-center username" placeholder="Username" required="required"/>
+                <input type="text" class="text-center password" about="./index.js" placeholder="Password" required="required"/>
             </div>
             <br>
             <div class="text-center">
-                <button type="submit" class="submitbtn btn btn-light btn-large">Submit</button>
+                <button type="submit" class="submitbtn btn btn-light btn-large" onclick="hello()">Submit</button>
             </div>
             <br>
             <div  class="text-center">
@@ -43,5 +45,6 @@
             </div>
         </form>
     </div>
+    <script src="bundle.js"></script>
 </body>
 </html>

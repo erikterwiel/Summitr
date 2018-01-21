@@ -8,12 +8,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-        <script src="./index.js">
-            <script src="./index.js"></script>
+        <script src="./index.js"></script>
+        <script src="/path/to/aws-cognito-sdk.min.js"></script>
+        <script src="/path/to/amazon-cognito-identity.min.js"></script>
+        <!-- optional: only if you use other AWS services -->
+        <script src="/path/to/aws-sdk-2.6.10.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <link type="text/css" rel="stylesheet" href="./indexstyle.css" />
+
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.185.0.min.js"></script>
 
 
         <link rel="icon" href="./Mountain Views Transparent Logo.png" type="image/gif" sizes="16x16">
@@ -43,7 +48,7 @@
                     <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
                     <li class="nav-item"><a class="nav-link trackr" href="maps.html">Trackr</a></li>
                     <li class="nav-item"><a class="nav-link weather" href="weather.html">Weather</a></li>
-                    <li class="nav-item"><button type="button" class="btn btn-dark" href="#">Sign-out</button></li>
+                    <li class="nav-item"><button type="button" class="btn btn-dark" onclick="exitApp();" href="#">Sign-out</button></li>
                 </ul>
             </div>
         </nav>
@@ -70,7 +75,7 @@
                 <li><a href="#" class="active breadcrumb-crumb" data-toggle="modal" data-target="#myModal">Feed</a></li> /
                 <li><a href="#" class="breadcrumb-crumb" data-toggle="modal" data-target="#genericModal">Post</a></li> /
                 <li><a href="#" class="breadcrumb-crumb" data-toggle="modal" data-target="#planModal">Plan</a></li> /
-                <li><a href="#" class="breadcrumb-crumb" data-toggle="modal" data-target="#reportModal">Report-Blog</a></li>
+                <li><a href="#" class="breadcrumb-crumb" data-toggle="modal" data-target="#reportModal">Report/Blog</a></li>
                       
             </ul>
         </div>
