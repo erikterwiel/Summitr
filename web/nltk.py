@@ -1,9 +1,21 @@
 import boto3
 
-client = boto3.client('comprehend',region_name='us-west-2')
+# Get the service resource.
+dynamodb = boto3.resource('dynamodb')
 
-response = client.detect_sentiment(
-    Text='FUCK is so fucking retarded I do not understand why their documentation is less organized than an autistic brain. Fuck this bullshit!',
-    LanguageCode='en'
+# Instantiate a table resource object without actually
+# creating a DynamoDB table. Note that the attributes of this table
+# are lazy-loaded: a request is not made nor are the attribute
+# values populated until the attributes
+# on the table resource are accessed or its load() method is called.
+table = dynamodb.Table('reports')
+
+print(table.creation_date_time)
+
+response = table.get_item(
+    Key={
+        'title': 'PennApps',
+    }
 )
-print(int(response['SentimentScore']['Positive']*5)
+item = response['Item']
+print(item)
