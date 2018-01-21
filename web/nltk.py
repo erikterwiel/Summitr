@@ -1,13 +1,25 @@
 import boto3
+import bs4
+
 dynamodb = boto3.resource('dynamodb')
 
-table = dynamodb.Table('test')
+table = dynamodb.Table('reports')
 client = boto3.client('comprehend',region_name='us-west-2')
+
+with open("index.html") as inf:
+    txt = inf.read()
+    soup = bs4.BeautifulSoup(txt)
+
+new_tag = soup.new_tag('div class="posts"')
+soup.body.insert(4, new_tag)
+
+with open("index.html", "w") as outf:
+    outf.write(str(soup))
 
 def sentimenter(txt):
     response = table.get_item(
         Key={
-            'test1': txt,
+            'title': txt,
         }
     )
 
@@ -22,7 +34,7 @@ def sentimenter(txt):
 
     table.update_item(
         Key={
-            'test1': txt,
+            'title': txt,
         },
         UpdateExpression='SET rating = :val1',
         ExpressionAttributeValues={
