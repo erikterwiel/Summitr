@@ -156,7 +156,7 @@ public class NewPhotoActivity extends AppCompatActivity {
             try {
                 mBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
                 mImage.setImageBitmap(mBitmap.createScaledBitmap(
-                        mBitmap, mBitmap.getWidth()/ 5, mBitmap.getHeight()/ 5, false));
+                        mBitmap, mBitmap.getWidth()/ 2, mBitmap.getHeight()/ 2, false));
                 mImage.setVisibility(View.VISIBLE);
                 mAdd.setVisibility(View.GONE);
             } catch (IOException ex) {

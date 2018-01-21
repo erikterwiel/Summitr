@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.erikterwiel.mountainviews">
 
-
     <permission
         android:name="com.erikterwiel.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -27,8 +27,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDu-nziNgRszYEdWPI6V1BehNTzNvwUyMw" />
@@ -49,7 +47,8 @@
             android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
             android:enabled="true" />
 
-        <activity android:name=".NewReportActivity"></activity>
+        <activity android:name=".NewReportActivity" />
+        <activity android:name=".TripActivity"></activity>
     </application>
 
 </manifest>

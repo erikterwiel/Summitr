@@ -15,6 +15,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/white"/>
     <EditText
+        android:id="@+id/start_destination"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -28,6 +29,7 @@
         android:layout_margin="32dp"
         android:src="@drawable/myo"/>
     <TextView
+        android:id="@+id/start_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -60,6 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_bluetooth_white_48dp"/>
+            android:src="@drawable/ic_bluetooth_connected_white_48dp"/>
     </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>
