@@ -42,6 +42,10 @@ app.post('/', function (req, res) {
     });
 })
 
-app.listen(, function () {
+<<<<<<< HEAD
+app.listen(3000 , function () {
+=======
+app.listen(3000, function () {
+>>>>>>> 23935f2d8c111a7db251dec4902963b291929205
     console.log('Example app listening on port 3000!')
 })
