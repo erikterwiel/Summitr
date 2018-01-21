@@ -1,16 +1,17 @@
 import boto3
 import bs4
+from bs4 import BeautifulSoup
 
 dynamodb = boto3.resource('dynamodb')
 
-table = dynamodb.Table('test')
+table = dynamodb.Table('reports')
 client = boto3.client('comprehend',region_name='us-west-2')
 
 with open("index.html") as inf:
     txt = inf.read()
     soup = bs4.BeautifulSoup(txt)
 
-new_link = soup.new_tag("img", src="githubprof.png")
+new_link = soup.new_tag("div", class='post')
 soup.body.append(new_link)
 
 with open("index.html", "w") as outf:
@@ -19,7 +20,7 @@ with open("index.html", "w") as outf:
 def sentimenter(txt):
     response = table.get_item(
         Key={
-            'test1': txt,
+            'title': txt,
         }
     )
 
@@ -34,7 +35,7 @@ def sentimenter(txt):
 
     table.update_item(
         Key={
-            'test1': txt,
+            'title': txt,
         },
         UpdateExpression='SET rating = :val1',
         ExpressionAttributeValues={
