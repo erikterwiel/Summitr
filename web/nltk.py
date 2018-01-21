@@ -1,33 +1,44 @@
 import boto3
+import bs4
 
-# Get the service resource.
 dynamodb = boto3.resource('dynamodb')
 
-table = dynamodb.Table('test')
+table = dynamodb.Table('reports')
 client = boto3.client('comprehend',region_name='us-west-2')
 
-def sentimenter(post_name):
-    report = table.get_item(
+with open("index.html") as inf:
+    txt = inf.read()
+    soup = bs4.BeautifulSoup(txt)
+
+new_tag = soup.new_tag('div class="posts"')
+soup.body.insert(4, new_tag)
+
+with open("index.html", "w") as outf:
+    outf.write(str(soup))
+
+def sentimenter(txt):
+    response = table.get_item(
         Key={
-            'test1': 'Good morning',
+            'title': txt,
         }
     )
-    report_item = report['Item']['report']
+
+    report_item = response['Item']['report']
 
     response = client.detect_sentiment(
         Text=report_item,
         LanguageCode='en'
     )
+
     star_count = int(response['SentimentScore']['Positive']*5)
-    print(star_count)
+
     table.update_item(
-    Key={
-        'test1': 'Good morning',
-        'rating': 0
+        Key={
+            'title': txt,
         },
-    UpdateExpression='SET rating = :val1',
-    ExpressionAttributeValues={
-        ':val1': star_count
+        UpdateExpression='SET rating = :val1',
+        ExpressionAttributeValues={
+            ':val1': star_count
         }
     )
 

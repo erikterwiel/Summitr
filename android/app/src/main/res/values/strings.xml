@@ -13,6 +13,7 @@
     <string name="register_confirm">Confirm Password</string>
     <string name="register_register">Sign up</string>
     <string name="home_pulling">Loading Account</string>
+    <string name="home_dialog">Loading Feed</string>
     <string name="home_wait">Please wait...</string>
     <string name="start_start">Start Trip</string>
     <string name="start_destination">Destination</string>
@@ -27,6 +28,7 @@
     <string name="new_report_distance">Distance</string>
     <string name="new_report_date">Date</string>
     <string name="new_report_report">Report</string>
+    <string name="layout_report_expand">Tap here to read more...</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>

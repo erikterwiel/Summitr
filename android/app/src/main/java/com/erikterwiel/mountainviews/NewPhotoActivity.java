@@ -130,6 +130,7 @@ public class NewPhotoActivity extends AppCompatActivity {
                 mRecent.setTime(Calendar.getInstance().getTimeInMillis());
                 mRecent.setIdentifier(mPhoto.getFilename());
                 mRecent.setType("photo");
+                mRecent.setUsername(mUser.getUsername());
                 new PushPhoto().execute();
                 Toast.makeText(NewPhotoActivity.this, "Photo uploading!", Toast.LENGTH_LONG).show();
                 finish();
@@ -154,7 +155,8 @@ public class NewPhotoActivity extends AppCompatActivity {
         if (requestCode == Constants.photoID && resultCode == RESULT_OK && data != null) {
             try {
                 mBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
-                mImage.setImageBitmap(mBitmap);
+                mImage.setImageBitmap(mBitmap.createScaledBitmap(
+                        mBitmap, mBitmap.getWidth()/ 5, mBitmap.getHeight()/ 5, false));
                 mImage.setVisibility(View.VISIBLE);
                 mAdd.setVisibility(View.GONE);
             } catch (IOException ex) {

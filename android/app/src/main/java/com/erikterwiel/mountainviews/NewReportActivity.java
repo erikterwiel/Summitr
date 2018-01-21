@@ -116,8 +116,8 @@ public class NewReportActivity extends AppCompatActivity {
                 File folder = new File("sdcard/Pictures/MountainViews/temp");
                 if (!folder.exists()) folder.mkdir();
                 for (int i = 0; i < mBitmaps.size(); i++) {
-                    String time = "" + (Calendar.getInstance().getTimeInMillis());
-                    File toSend = new File(folder, "toSend.png");
+                    Long time = Calendar.getInstance().getTimeInMillis();
+                    File toSend = new File(folder, "toSend" + i + ".png");
                     try {
                         toSend.createNewFile();
                         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -133,7 +133,7 @@ public class NewReportActivity extends AppCompatActivity {
                     TransferObserver observer = mTransferUtility.upload(
                             Constants.s3BucketName,
                             mUser.getUsername() + "/" + time,
-                            new File(Constants.fileOutputPath));
+                            new File("sdcard/Pictures/MountainViews/temp/toSend" + i + ".png"));
                     observer.setTransferListener(new NewReportActivity.UploadListener());
                     mPhoto = new Photo();
                     mPhoto.setFilename(mUser.getUsername() + "/" + time);
@@ -149,6 +149,7 @@ public class NewReportActivity extends AppCompatActivity {
                 mRecent.setTime(Calendar.getInstance().getTimeInMillis());
                 mRecent.setIdentifier(mReport.getTitle());
                 mRecent.setType("report");
+                mRecent.setUsername(mUser.getUsername());
                 new PushReport().execute();
                 Toast.makeText(NewReportActivity.this, "Trip report uploading!", Toast.LENGTH_LONG).show();
                 finish();
@@ -173,7 +174,8 @@ public class NewReportActivity extends AppCompatActivity {
         if (requestCode == Constants.photoID && resultCode == RESULT_OK && data != null) {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
-                mBitmaps.add(bitmap);
+                mBitmaps.add(bitmap.createScaledBitmap(
+                        bitmap, bitmap.getWidth()/ 5, bitmap.getHeight()/ 5, false));
                 mAdapter.itemAdded(mBitmaps.size() - 1);
                 Log.i(TAG, "item fucking isnert");
             } catch (IOException ex) {
