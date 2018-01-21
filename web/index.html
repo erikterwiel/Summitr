@@ -13,6 +13,22 @@
         <script src="/path/to/amazon-cognito-identity.min.js"></script>
         optional: only if you use other AWS services
         <script src="/path/to/aws-sdk-2.6.10.js"></script>-->
+<<<<<<< HEAD
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link type="text/css" rel="stylesheet" href="./indexstyle.css" />
+
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.185.0.min.js"></script>
+
+
+        <link rel="icon" href="./Mountain Views Transparent Logo.png" type="image/gif" sizes="16x16">
+
+        
+    </head>    
+
+    <body>
+=======
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="./indexstyle.css" rel="stylesheet" type="text/css"/>
@@ -30,43 +46,145 @@
 
 
         function numStars (num) {
+>>>>>>> 15e262747e8c0c1e5802fb11d0a7dbaf5c740cec
 
-            var star = document.getElementById('starboy');
-            var star1 = document.getElementById('starboy1');
-            var star2 = document.getElementById('starboy2');
-            var star3 = document.getElementById('starboy3');
-            var star4 = document.getElementById('starboy4');
-            switch (num){
-                case 0:
-                    break;
-                case 1:
-                    star.style.display="block";
-                    break;
-                case 2:
-                    star.style.display="block";
-                    star1.style.display="block"; 
-                    break;                   
-                case 3:
-                    star.style.display="block";
-                    star1.style.display="block";
-                    star2.style.display="block";
-                    break;
-                case 4:
-                    star.style.display="block";
-                    star1.style.display="block";
-                    star2.style.display="block";
-                    star3.style.display="block";
-                    break;
-                case 5:
-                    star.style.display="block";
-                    star1.style.display="block";
-                    star2.style.display="block";
-                    star3.style.display="block";
-                    star4.style.display="block";
-                    break;
-            }
-        }
+            <script>
+                
+                    // $.ajax({
+                    //     type: "title",
+                    //     url: "./nltk.py",
+                    //     data: { param: "text"}
+                    // }).done(function() {
+                    //     console.log("hello world Navraj");
+                    // });
+                    $(document).ready(function (){
+                       
+                        $('.fa-star').hide();
+                    });
 
+<<<<<<< HEAD
+                    $(document).ready(function numStars(x){
+                   
+                        console.log(x);
+                        var num = x;
+                        console.log(num);
+                        
+                        $("#starboy").show();
+                        $("#starboy1").show();
+                        $("#starboy2").show();
+                        
+                        if (x == 1){
+                            $("#starboy").show();
+                        }else if(x == 2) {
+                            $("#starboy").show();
+                            $("#starboy1").show();
+                        }else if(x == 3 || x == "ƒ (a,b){return new r.fn.init(a,b)}") {
+                            console.log("hello");
+                            $("#starboy").show();
+                            $("#starboy1").show();
+                            $("#starboy2").show();
+
+                        }else if(x == 4) {
+                            $("#starboy").show();
+                            $("#starboy1").show();
+                            $("#starboy2").show();
+                            $("#starboy3").show();
+                        }else if(x == 5) {
+                            $("#starboy").show();
+                            $("#starboy1").show();
+                            $("#starboy2").show();
+                            $("#starboy3").show();
+                            $("#starboy4").show();
+                        }else{
+                            console.log("Error, please enter an integer between 0 and 5.");
+                        }
+                        
+                    }); 
+                    
+                    // function numStars(num){
+            
+                    //     var star = document.getElementById('starboy');
+                    //     var star1 = document.getElementById('starboy1');
+                    //     var star2 = document.getElementById('starboy2');
+                    //     var star3 = document.getElementById('starboy3');
+                    //     var star4 = document.getElementById('starboy4');
+                    //     switch (num){
+                    //         case 0:
+                    //             break;
+                    //         case 1:
+                    //             document.getElementById('starboy').style.visibility="hidden";
+                    //             break;
+                    //         case 2:
+                    //             document.getElementById('starboy').style.visibility="hidden";
+                    //             star1.style.display="inline-block"; 
+                    //             break;                   
+                    //         case 3:
+                    //             document.getElementById('starboy').style.visibility="hidden";
+                    //             star1.style.visibility="hidden";
+                    //             star2.style.opacity=1;
+                    //             break;
+                    //         case 4:
+                    //             document.getElementById('starboy').style.visibility="hidden";
+                    //             star1.style.display="block";
+                    //             star2.style.display="block";
+                    //             star3.style.display="block";
+                    //             break;
+                    //         case 5:
+                    //             document.getElementById('starboy').style.visibility="hidden";
+                    //             star1.style.display="block";
+                    //             star2.style.display="block";
+                    //             star3.style.display="block";
+                    //             star4.style.display="block";
+                    //             break;
+                    //         default:
+                    //             console.log("Failed, please enter a valid integer between 0 and 5.");    
+                    //     }
+                   // }
+            
+                </script>
+    <div>
+        <nav class="navbar navbar-expand-sm navbar-success fixed-top">
+            <div class="container-fluid">
+                <ul class="navbar-nav mb-auto">
+                    <a class="navbar-brand" href="./index.html">
+                        <img src="Mountain Views Transparent Logo.png" alt="Logo" style="width: 40px; height: 40px;">
+                    </a>
+                    <form class="form-inline" action="/search.js">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-success" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+                    </form>
+                </ul>
+
+                <ul class="navbar-nav navtitle text-center">
+                    <li class="nav-item"><a class="title" href="index.html">Mountain Views</a></li>
+                </ul>
+                <ul class ="navbar-nav float-right">
+                    <li class="nav-item"><a class="nav-link" href="report.html">Report</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link trackr" href="maps.html">Trackr</a></li>
+                    <li class="nav-item"><a class="nav-link weather" href="weather.html">Weather</a></li>
+                    <li class="nav-item"><button type="button" class="btn btn-dark" onclick="exitApp();" href="#">Sign-out</button></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="jumbotron jumbotron-fluid section" style="background-color: white;" id="home">
+
+        <a onload="numStars(3);">
+            <i id="starboy" class="fa fa-star"></i>
+            <i id="starboy1" class="fa fa-star"></i>
+            <i id="starboy2" class="fa fa-star"></i>
+            <i id="starboy3" class="fa fa-star"></i>
+            <i id="starboy4" class="fa fa-star"></i>
+
+
+        </a>
+
+
+        <!-- <div class="dropdown">
+=======
     </script>
 <body>
 <div>
@@ -104,6 +222,7 @@
             
         -->
 <!-- <div class="dropdown">
+>>>>>>> 15e262747e8c0c1e5802fb11d0a7dbaf5c740cec
             <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
                 Create
               </button>
@@ -259,7 +378,6 @@
 </div>
 </div>
 </div>
-</div>
-</div><div class="posts"><img src="githubprof.png"/><p>test</p></div class="posts"></body>
+</div></div><div class="posts"><p>autouser</p><img src="githubprof.png"/><p>new years day</p></div class="posts"></body>
 <footer>Social media website created and hosted by Mountain Views Inc.</footer>
 </html>
