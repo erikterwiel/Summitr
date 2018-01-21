@@ -19,12 +19,16 @@ def sentimenter(txt):
 
     new_tag = soup.new_tag('div class="posts"')
     soup.body.insert(4, new_tag)
+
+    new_title = soup.new_tag('h2')
+    new_title.insert(0,response['Item']['title'])
+    new_tag.append(new_title)
+
     new_pic = soup.new_tag('img',src='githubprof.png')
     new_tag.append(new_pic)
+
     new_report = soup.new_tag('p')
-
     report_item = response['Item']['report']
-
     new_report.insert(0, report_item)
     new_tag.append(new_report)
 
