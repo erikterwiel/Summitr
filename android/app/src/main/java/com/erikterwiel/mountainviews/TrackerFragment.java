@@ -13,88 +13,52 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class TrackerFragment extends Fragment implements OnMapReadyCallback {
 
     public static final String TAG = "TrackerFragment.java";
 
-    MapView gMapView;
-    GoogleMap gMap = null;
+    GoogleMap mGoogleMap;
+    MapView mMapView;
+    View mView;
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater,
-                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_feed, container, false);
-        MapsInitializer.initialize(getActivity());
-        gMapView = (MapView) view.findViewById(R.id.tracker_map);
-        gMapView.getMapAsync(this);
-        gMapView.onCreate(getArguments());
-        return view;
+    public TrackerFragment() {
     }
 
     @Override
-    public void onMapReady(GoogleMap map) {
-        gMap = map;
-        gMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(39.951883, -75.191222), 20));
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        mView = inflater.inflate(R.layout.fragment_tracker, container, false);
+        return mView;
     }
 
-
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        gMapView.onCreate(savedInstanceState);
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        gMapView.onResume();
-        if (gMapView != null)
-            gMapView.onResume();
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mMapView = (MapView) mView.findViewById(R.id.tracker_map);
+        if (mMapView != null) {
+            mMapView.onCreate(null);
+            mMapView.onResume();
+            mMapView.getMapAsync(this);
+        }
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        gMapView.onPause();
-    }
+    public void onMapReady(GoogleMap googleMap) {
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        gMapView.onDestroy();
-        if (gMapView != null)
-            gMapView.onDestroy();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        if (gMapView != null)
-            gMapView.onStart();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (gMapView != null)
-            gMapView.onStop();
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        gMapView.onLowMemory();
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        if (gMapView != null)
-            gMapView.onSaveInstanceState(outState);
+        MapsInitializer.initialize(getContext());
+        mGoogleMap = googleMap;
+        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(40.68947, -74.044502)).title("Statue of liberty"));
+        CameraPosition liberty = CameraPosition.builder().target(new LatLng(40.68947, -74.044502)).zoom(16).bearing(0).tilt(45).build();
+        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(liberty));
     }
 }

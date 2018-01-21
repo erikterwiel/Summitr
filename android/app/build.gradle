@@ -42,5 +42,4 @@ dependencies {
     }
     implementation 'com.thalmic:myosdk:0.10.+@aar'
     implementation 'com.google.android.gms:play-services:11.8.0'
-    implementation 'com.google.android.gms:play-services:9.8.0'
 }

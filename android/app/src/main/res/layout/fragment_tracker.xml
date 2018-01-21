@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.gms.maps.MapView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tracker_map"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    tools:context=".TrackerFragment">
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/tracker_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>
