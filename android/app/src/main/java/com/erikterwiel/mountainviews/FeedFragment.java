@@ -214,20 +214,31 @@ public class FeedFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... inputs) {
             mReport = mMapper.load(Report.class, mRecents.get(mRecents.size() - mIndex).getIdentifier());
-            displayReport();
+            String s3Name = mReport.getPhotos().get(0);
+            mPhoto = mMapper.load(Photo.class, s3Name);
+            File folder = new File("sdcard/Pictures/MountainViews/Input");
+            if (!folder.exists()) folder.mkdir();
+            File file = new File(folder, "input" + mIndex + ".png");
+            Log.i(TAG, file.getAbsolutePath());
+            TransferObserver observer = mTransferUtility.download(Constants.s3BucketName, s3Name, file);
+            observer.setTransferListener(new DownloadReportListener());
             return null;
         }
     }
 
-    private void displayReport() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
+    private class DownloadReportListener implements TransferListener {
+        @Override
+        public void onStateChanged(int id, TransferState state) {
+            Log.i(TAG, state + "");
+            if (state == TransferState.COMPLETED) {
+                Bitmap bitmap = BitmapFactory.decodeFile(
+                        "sdcard/Pictures/MountainViews/Input/input" + mIndex + ".png");
                 inflate();
                 LinearLayout layout = (LinearLayout) mReportView.findViewById(R.id.layout_report_layout);
                 TextView userName = (TextView) mReportView.findViewById(R.id.layout_report_username);
                 TextView title = (TextView) mReportView.findViewById(R.id.layout_report_title);
                 TextView location = (TextView) mReportView.findViewById(R.id.layout_report_location);
+                ImageView imageView = (ImageView) mReportView.findViewById(R.id.layout_report_photo);
                 TextView expand = (TextView) mReportView.findViewById(R.id.layout_report_expand);
                 RecyclerView recycler = (RecyclerView) mReportView.findViewById(R.id.layout_report_recycler);
                 TextView report = (TextView) mReportView.findViewById(R.id.layout_report_report);
@@ -236,10 +247,11 @@ public class FeedFragment extends Fragment {
                     public void onClick(View view) {
                     }
                 });
-                userName.setText(mRecents.get(mRecents.size() - mIndex).getUsername());
+                userName.setText(mRecents.get(mRecents.size() - mIndex).getUsername() + " - Trip Report");
                 title.setText(mReport.getTitle() + " - " + mReport.getDate());
                 location.setText(mReport.getLocation() + " - " + mReport.getDistance());
                 expand.setText(R.string.layout_report_expand);
+                imageView.setImageBitmap(bitmap);
                 mOuterLayout.addView(mReportView, mParams);
                 if (mRecents.size() - mIndex != 0) {
                     mIndex += 1;
@@ -257,6 +269,18 @@ public class FeedFragment extends Fragment {
                     }
                 }
             }
-        });
+        }
+        @Override
+        public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
+            if (bytesTotal != 0) {
+                int percentage = (int) (bytesCurrent / bytesTotal * 100);
+                Log.i(TAG, Integer.toString(percentage) + "% downloaded");
+            }
+        }
+        @Override
+        public void onError(int id, Exception ex) {
+            ex.printStackTrace();
+            Log.i(TAG, "Error detected");
+        }
     }
 }
