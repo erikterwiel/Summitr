@@ -48,7 +48,8 @@
             android:enabled="true" />
 
         <activity android:name=".NewReportActivity" />
-        <activity android:name=".TripActivity"></activity>
+        <activity android:name=".TripActivity" />
+        <activity android:name=".ReportActivity"></activity>
     </application>
 
 </manifest>

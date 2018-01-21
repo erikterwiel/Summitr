@@ -2,6 +2,7 @@ package com.erikterwiel.mountainviews;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
@@ -245,6 +246,10 @@ public class FeedFragment extends Fragment {
                 layout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        Intent reportIntent = new Intent(getActivity(), ReportActivity.class);
+                        reportIntent.putExtra("report", mReport.getTitle());
+                        reportIntent.putExtra("username", getActivity().getIntent().getStringExtra("username"));
+                        startActivity(reportIntent);
                     }
                 });
                 userName.setText(mRecents.get(mRecents.size() - mIndex).getUsername() + " - Trip Report");
