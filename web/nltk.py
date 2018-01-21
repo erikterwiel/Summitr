@@ -1,8 +1,13 @@
 import boto3
 import bs4
+import botocore
+
+s3 = boto3.resource('s3')
+
+bucket = s3.Bucket('mountainviews')
+s3.meta.client.head_bucket(Bucket='mountainviews')
 
 dynamodb = boto3.resource('dynamodb')
-s3 = boto3.resource('s3')
 
 recents = dynamodb.Table('recents')
 table = dynamodb.Table('reports')
@@ -53,7 +58,7 @@ def load_pictures(txt):
 def sentimenter(id):
     with open("index.html") as inf:
         txt = inf.read()
-        soup = bs4.BeautifulSoup(txt)
+        soup = bs4.BeautifulSoup(txt,"html.parser")
 
     new_tag = soup.new_tag('div class="posts"')
     soup.body.insert(4, new_tag)
@@ -67,10 +72,8 @@ def sentimenter(id):
     new_tag.append(misc)
 
     ######
-    #for key in bucket.objects.all():
-        #print(key.key)
-
-    new_pic = soup.new_tag('img',src='githubprof.png')
+    s3.Bucket("mountainviewer").download_file(str(id), 'my_local_image.jpg')
+    new_pic = soup.new_tag('img',src='my_local_image.jpg')
     new_tag.append(new_pic)
 
     new_report = soup.new_tag('p')
@@ -102,7 +105,7 @@ def sentimenter(id):
 def display_photos(id):
     with open("index.html") as inf:
         txt = inf.read()
-        soup = bs4.BeautifulSoup(txt)
+        soup = bs4.BeautifulSoup(txt, "html.parser")
 
     new_tag = soup.new_tag('div class="posts"')
     soup.body.insert(4, new_tag)
@@ -113,8 +116,10 @@ def display_photos(id):
     user_id.insert(0, userid)
     new_tag.append(user_id)
 
-    new_pic = soup.new_tag('img', src='githubprof.png')
+    s3.Bucket("mountainviewer").download_file(str(id), 'my_local_image.jpg')
+    new_pic = soup.new_tag('img',src='my_local_image.jpg')
     new_tag.append(new_pic)
+
 #####
     new_caption = soup.new_tag('p')
     new_caption.insert(0, caption)
