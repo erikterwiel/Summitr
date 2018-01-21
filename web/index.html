@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 
 <html lang="eng" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="utf-8" />
-        <title>Mountain Views</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-        <script src="./index.js"></script><!--
+<head>
+<meta charset="utf-8"/>
+<title>Mountain Views</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<script src="./index.js"></script><!--
         <script src="/path/to/aws-cognito-sdk.min.js"></script>
         <script src="/path/to/amazon-cognito-identity.min.js"></script>
         optional: only if you use other AWS services
         <script src="/path/to/aws-sdk-2.6.10.js"></script>-->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link type="text/css" rel="stylesheet" href="./indexstyle.css" />
-
-        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.185.0.min.js"></script>
-
-
-        <link rel="icon" href="./Mountain Views Transparent Logo.png" type="image/gif" sizes="16x16">
-
-
-    </head>
-
-    <script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="./indexstyle.css" rel="stylesheet" type="text/css"/>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.185.0.min.js"></script>
+<link href="./Mountain Views Transparent Logo.png" rel="icon" sizes="16x16" type="image/gif"/>
+</head>
+<script>
         $.ajax({
             type: "title",
             url: "./nltk.py",
@@ -75,41 +68,34 @@
         }
 
     </script>
-
-    <body>
-    <div>
-        <nav class="navbar navbar-expand-sm navbar-success fixed-top">
-            <div class="container-fluid">
-                <ul class="navbar-nav mb-auto">
-                    <a class="navbar-brand" href="./index.html">
-                        <img src="Mountain Views Transparent Logo.png" alt="Logo" style="width: 40px; height: 40px;">
-                    </a>
-                    <form class="form-inline" action="/search.js">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-success" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
-                    </form>
-                </ul>
-
-                <ul class="navbar-nav navtitle text-center">
-                    <li class="nav-item"><a class="title" href="index.html">Mountain Views</a></li>
-                </ul>
-                <ul class ="navbar-nav float-right">
-                    <li class="nav-item"><a class="nav-link" href="report.html">Report</a></li>
-                    <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
-                    <li class="nav-item"><a class="nav-link trackr" href="maps.html">Trackr</a></li>
-                    <li class="nav-item"><a class="nav-link weather" href="weather.html">Weather</a></li>
-                    <li class="nav-item"><button type="button" class="btn btn-dark" onclick="exitApp();" href="#">Sign-out</button></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
-
-    <div class="jumbotron jumbotron-fluid section" style="background-color: white;" id="home">
-
-        
-        
-        <!--
+<body>
+<div>
+<nav class="navbar navbar-expand-sm navbar-success fixed-top">
+<div class="container-fluid">
+<ul class="navbar-nav mb-auto">
+<a class="navbar-brand" href="./index.html">
+<img alt="Logo" src="Mountain Views Transparent Logo.png" style="width: 40px; height: 40px;"/>
+</a>
+<form action="/search.js" class="form-inline">
+<input class="form-control mr-sm-2" placeholder="Search" type="text"/>
+<button class="btn btn-success" type="submit"><i aria-hidden="true" class="fa fa-search fa-2x"></i></button>
+</form>
+</ul>
+<ul class="navbar-nav navtitle text-center">
+<li class="nav-item"><a class="title" href="index.html">Mountain Views</a></li>
+</ul>
+<ul class="navbar-nav float-right">
+<li class="nav-item"><a class="nav-link" href="report.html">Report</a></li>
+<li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+<li class="nav-item"><a class="nav-link trackr" href="maps.html">Trackr</a></li>
+<li class="nav-item"><a class="nav-link weather" href="weather.html">Weather</a></li>
+<li class="nav-item"><button class="btn btn-dark" href="#" onclick="exitApp();" type="button">Sign-out</button></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="jumbotron jumbotron-fluid section" id="home" style="background-color: white;">
+<!--
             <i id="starboy" class="fa fa-star" aria-hidden="true"></i>
             <i id="starboy1" class="fa fa-star" aria-hidden="true"></i>
             <i id="starboy2" class="fa fa-star" aria-hidden="true"></i>
@@ -117,7 +103,7 @@
             <i id="starboy4" class="fa fa-star" aria-hidden="true"></i>
             
         -->
-        <!-- <div class="dropdown">
+<!-- <div class="dropdown">
             <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
                 Create
               </button>
@@ -128,29 +114,21 @@
                 <a class="dropdown-item" href="#">Activities</a>
               </div>
         </div> -->
-
-        <div class="container">
-                              
-            <ul class="breadcrumb">
-                <li><a href="#" class="active breadcrumb-crumb" data-toggle="modal" data-target="#myModal">Feed</a></li> /
-                <li><a href="#" class="breadcrumb-crumb" data-toggle="modal" data-target="#genericModal">Post</a></li> /
-                <li><a href="#" class="breadcrumb-crumb" data-toggle="modal" data-target="#planModal">Plan</a></li> /
-                <li><a href="#" class="breadcrumb-crumb" data-toggle="modal" data-target="#reportModal">Report-Blog</a></li>
-                      
-            </ul>
-        </div>
-
-
-        <div class="container">
-           
-
-            <!-- Modal -->
-            <div class="modal fade" id="reportModal" role="dialog">
-                    <div class="modal-dialog">
-                    
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <!-- <div class="modal-header">
+<div class="container">
+<ul class="breadcrumb">
+<li><a class="active breadcrumb-crumb" data-target="#myModal" data-toggle="modal" href="#">Feed</a></li> /
+                <li><a class="breadcrumb-crumb" data-target="#genericModal" data-toggle="modal" href="#">Post</a></li> /
+                <li><a class="breadcrumb-crumb" data-target="#planModal" data-toggle="modal" href="#">Plan</a></li> /
+                <li><a class="breadcrumb-crumb" data-target="#reportModal" data-toggle="modal" href="#">Report-Blog</a></li>
+</ul>
+</div>
+<div class="container">
+<!-- Modal -->
+<div class="modal fade" id="reportModal" role="dialog">
+<div class="modal-dialog">
+<!-- Modal content-->
+<div class="modal-content">
+<!-- <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Post</h4>
                         </div>
@@ -282,6 +260,6 @@
 </div>
 </div>
 </div>
-</body>
+</div><div class="posts"><img src="githubprof.png"/><p>test</p></div class="posts"></body>
 <footer>Social media website created and hosted by Mountain Views Inc.</footer>
 </html>
