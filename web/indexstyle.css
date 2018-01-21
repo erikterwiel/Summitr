@@ -8,8 +8,10 @@ body,html {
     opacity: 0.7;
 }
 
-#starboy{
-    display: none;
+.fa-star {
+    color:#0CA948;
+    right: 0px;
+    bottom:0px;
 }
 
 .navbar{
