@@ -13,6 +13,7 @@ public class Recent {
     private long mTime;
     private String mIdentifier;
     private String mType;
+    private String mUsername;
 
     @DynamoDBHashKey (attributeName = "time")
     public long getTime() {
@@ -39,5 +40,14 @@ public class Recent {
 
     public void setType(String type) {
         mType = type;
+    }
+
+    @DynamoDBAttribute (attributeName = "username")
+    public String getUsername() {
+        return mUsername;
+    }
+
+    public void setUsername(String username) {
+        mUsername = username;
     }
 }
