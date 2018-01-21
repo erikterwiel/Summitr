@@ -17,9 +17,12 @@
   "author": "Sterling Finn",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.185.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "request": "^2.83.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^9.3.0"
+  }
 }

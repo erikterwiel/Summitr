@@ -3,7 +3,7 @@ var AWS = require("aws-sdk");
 var http = require('http');
 http.createServer(function (request, response) {
   homeRoute(request, response);
-}).listen(8000, '18.218.193.120');
+}).listen(3000, '18.218.193.120');
 console.log('Server running at http://<mountainviews.ca>/');
 
 
