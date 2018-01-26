@@ -1,7 +1,7 @@
 
 ![mountain views showcase stacked 3](https://user-images.githubusercontent.com/29645585/35462682-f5533b98-02ba-11e8-8245-56d4febd1822.png)
 
-# MountainViews
+# Mountain Views
 Mountain Views is a social media and backcountry safety platform based on Android and the Web. On both Android and Web apps, users may post pictures, read and write trip reports, plan trips, and track locations of mutual followed users currently on trips. The Android application is paired with the Myo Armband, meant to be worn when on trips and if the unexpected happens and the user is in desperate need of rescue, they perform a preset sequence of gestures to automatically send the user's coordinates to local rescue authorities, family members, and followers through push, email, and text notifications.
 
 Mountain Views was started at PennApps XVII and can be found on Devpost [here.](https://devpost.com/software/mountain-views)
