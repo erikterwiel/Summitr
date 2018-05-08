@@ -74,8 +74,8 @@ fastlane/readme.md
 /android/build
 /android/captures
 .externalNativeBuild
-/android/app/src/main/java/com/erikterwiel/summitr/Constants.java
-android/app/src/main/java/com/erikterwiel/summitr/Constants.java
+/android/app/src/main/java/com/erikterwiel/mountainviews/Constants.java
+android/app/src/main/java/com/erikterwiel/mountainviews/Constants.java
 android/build/android-profile
 /web/LightsailDefaultPrivateKey-us-east-2.pem
 web/LightsailDefaultPrivateKey-us-east-2.pem    
