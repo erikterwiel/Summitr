@@ -40,9 +40,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         Log.i(TAG, "onCreate() called");
-        setTheme(com.erikterwiel.summitr.R.style.AppTheme);
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
-        setContentView(com.erikterwiel.summitr.R.layout.activity_login);
+        setContentView(R.layout.activity_login);
 
         ActivityCompat.requestPermissions(
                 this,
@@ -53,10 +53,10 @@ public class LoginActivity extends AppCompatActivity {
                         Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 100);
 
-        mUsername = (EditText) findViewById(com.erikterwiel.summitr.R.id.login_user);
-        mPassword = (EditText) findViewById(com.erikterwiel.summitr.R.id.login_password);
-        mLogin = (Button) findViewById(com.erikterwiel.summitr.R.id.login_in);
-        mRegister = (Button) findViewById(com.erikterwiel.summitr.R.id.login_up);
+        mUsername = (EditText) findViewById(R.id.login_user);
+        mPassword = (EditText) findViewById(R.id.login_password);
+        mLogin = (Button) findViewById(R.id.login_in);
+        mRegister = (Button) findViewById(R.id.login_up);
 
         ClientConfiguration clientConfiguration = new ClientConfiguration();
         CognitoUserPool userPool = new CognitoUserPool(this, Constants.cognitoPoolID,
@@ -85,8 +85,8 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             mDialog = ProgressDialog.show(LoginActivity.this,
-                    getString(com.erikterwiel.summitr.R.string.login_dialog),
-                    getString(com.erikterwiel.summitr.R.string.login_wait));
+                    getString(R.string.login_dialog),
+                    getString(R.string.login_wait));
         }
 
         @Override

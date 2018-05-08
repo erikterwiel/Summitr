@@ -37,13 +37,13 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.erikterwiel.summitr.R.layout.activity_start);
+        setContentView(R.layout.activity_start);
 
-        mDestination = (EditText) findViewById(com.erikterwiel.summitr.R.id.start_destination);
-        mText = (TextView) findViewById(com.erikterwiel.summitr.R.id.start_text);
-        mHome = (FloatingActionButton) findViewById(com.erikterwiel.summitr.R.id.start_home);
-        mStart = (FloatingActionButton) findViewById(com.erikterwiel.summitr.R.id.start_start);
-        mConnect = (FloatingActionButton) findViewById(com.erikterwiel.summitr.R.id.start_connect);
+        mDestination = (EditText) findViewById(R.id.start_destination);
+        mText = (TextView) findViewById(R.id.start_text);
+        mHome = (FloatingActionButton) findViewById(R.id.start_home);
+        mStart = (FloatingActionButton) findViewById(R.id.start_start);
+        mConnect = (FloatingActionButton) findViewById(R.id.start_connect);
         mCredentialsProvider = getCredProvider(this);
 
         mHome.setOnClickListener(new View.OnClickListener() {
@@ -70,12 +70,12 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (mBluetooth) {
                     mBluetooth = false;
-                    mConnect.setImageResource(com.erikterwiel.summitr.R.drawable.ic_bluetooth_white_48dp);
-                    mText.setText(com.erikterwiel.summitr.R.string.start_myo_no);
+                    mConnect.setImageResource(R.drawable.ic_bluetooth_white_48dp);
+                    mText.setText(R.string.start_myo_no);
                 } else {
                     mBluetooth = true;
-                    mConnect.setImageResource(com.erikterwiel.summitr.R.drawable.ic_bluetooth_connected_white_48dp);
-                    mText.setText(com.erikterwiel.summitr.R.string.start_myo);
+                    mConnect.setImageResource(R.drawable.ic_bluetooth_connected_white_48dp);
+                    mText.setText(R.string.start_myo);
                 }
             }
         });

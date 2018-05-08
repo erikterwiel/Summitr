@@ -27,13 +27,13 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.erikterwiel.summitr.R.layout.activity_register);
+        setContentView(R.layout.activity_register);
 
-        mUsername = (EditText) findViewById(com.erikterwiel.summitr.R.id.register_user);
-        mEmail = (EditText) findViewById(com.erikterwiel.summitr.R.id.register_email);
-        mPassword = (EditText) findViewById(com.erikterwiel.summitr.R.id.register_password);
-        mConfirm = (EditText) findViewById(com.erikterwiel.summitr.R.id.register_confirm);
-        mRegister = (Button) findViewById(com.erikterwiel.summitr.R.id.register_register);
+        mUsername = (EditText) findViewById(R.id.register_user);
+        mEmail = (EditText) findViewById(R.id.register_email);
+        mPassword = (EditText) findViewById(R.id.register_password);
+        mConfirm = (EditText) findViewById(R.id.register_confirm);
+        mRegister = (Button) findViewById(R.id.register_register);
 
         ClientConfiguration clientConfiguration = new ClientConfiguration();
         final CognitoUserPool userPool = new CognitoUserPool(this, Constants.cognitoPoolID,

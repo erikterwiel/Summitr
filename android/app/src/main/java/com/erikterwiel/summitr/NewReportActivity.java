@@ -68,18 +68,18 @@ public class NewReportActivity extends AppCompatActivity {
 
         Log.i(TAG, "onCreate() called");
         super.onCreate(savedInstanceState);
-        setContentView(com.erikterwiel.summitr.R.layout.activity_new_report);
+        setContentView(R.layout.activity_new_report);
 
-        mLayout = (LinearLayout) findViewById(com.erikterwiel.summitr.R.id.new_report_layout);
-        mCancel = (ImageView) findViewById(com.erikterwiel.summitr.R.id.new_report_cancel);
-        mDone = (ImageView) findViewById(com.erikterwiel.summitr.R.id.new_report_done);
-        mTitle = (EditText) findViewById(com.erikterwiel.summitr.R.id.new_report_title);
-        mLocation = (EditText) findViewById(com.erikterwiel.summitr.R.id.new_report_location);
-        mDistance = (EditText) findViewById(com.erikterwiel.summitr.R.id.new_report_distance);
-        mDate = (EditText) findViewById(com.erikterwiel.summitr.R.id.new_report_date);
-        mRecycler = (RecyclerView) findViewById(com.erikterwiel.summitr.R.id.new_report_recycler);
-        mAdd = (Button) findViewById(com.erikterwiel.summitr.R.id.new_report_add);
-        mReportInput = (EditText) findViewById(com.erikterwiel.summitr.R.id.new_report_report);
+        mLayout = (LinearLayout) findViewById(R.id.new_report_layout);
+        mCancel = (ImageView) findViewById(R.id.new_report_cancel);
+        mDone = (ImageView) findViewById(R.id.new_report_done);
+        mTitle = (EditText) findViewById(R.id.new_report_title);
+        mLocation = (EditText) findViewById(R.id.new_report_location);
+        mDistance = (EditText) findViewById(R.id.new_report_distance);
+        mDate = (EditText) findViewById(R.id.new_report_date);
+        mRecycler = (RecyclerView) findViewById(R.id.new_report_recycler);
+        mAdd = (Button) findViewById(R.id.new_report_add);
+        mReportInput = (EditText) findViewById(R.id.new_report_report);
         mRecycler.setLayoutManager(new LinearLayoutManager(
                 this, LinearLayoutManager.HORIZONTAL, false));
         mAdapter = new PictureAdapter(mBitmaps);
@@ -259,7 +259,7 @@ public class NewReportActivity extends AppCompatActivity {
         @Override
         public PictureHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(NewReportActivity.this);
-            View view = layoutInflater.inflate(com.erikterwiel.summitr.R.layout.list_item_photo, parent, false);
+            View view = layoutInflater.inflate(R.layout.list_item_photo, parent, false);
             return new NewReportActivity.PictureHolder(view);
         }
 
@@ -284,7 +284,7 @@ public class NewReportActivity extends AppCompatActivity {
 
         public PictureHolder(View itemView) {
             super(itemView);
-            mPicture = (ImageView) itemView.findViewById(com.erikterwiel.summitr.R.id.new_report_image);
+            mPicture = (ImageView) itemView.findViewById(R.id.new_report_image);
         }
 
         public void bindPicture(Bitmap bitmap) {

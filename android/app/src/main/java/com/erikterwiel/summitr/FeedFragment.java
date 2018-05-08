@@ -59,8 +59,8 @@ public class FeedFragment extends Fragment {
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mInflater = inflater;
         mContainer = container;
-        View outer = inflater.inflate(com.erikterwiel.summitr.R.layout.fragment_feed, container, false);
-        mOuterLayout = (LinearLayout) outer.findViewById(com.erikterwiel.summitr.R.id.feed_layout);
+        View outer = inflater.inflate(R.layout.fragment_feed, container, false);
+        mOuterLayout = (LinearLayout) outer.findViewById(R.id.feed_layout);
         inflate();
         mParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -78,8 +78,8 @@ public class FeedFragment extends Fragment {
     }
 
     private void inflate() {
-        mPhotoView = mInflater.inflate(com.erikterwiel.summitr.R.layout.layout_photo, mContainer, false);
-        mReportView = mInflater.inflate(com.erikterwiel.summitr.R.layout.layout_report, mContainer, false);
+        mPhotoView = mInflater.inflate(R.layout.layout_photo, mContainer, false);
+        mReportView = mInflater.inflate(R.layout.layout_report, mContainer, false);
     }
 
     public TransferUtility getTransferUtility(Context context) {
@@ -108,8 +108,8 @@ public class FeedFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             mDialog = ProgressDialog.show(getActivity(),
-                    getString(com.erikterwiel.summitr.R.string.home_dialog),
-                    getString(com.erikterwiel.summitr.R.string.home_wait));
+                    getString(R.string.home_dialog),
+                    getString(R.string.home_wait));
         }
 
         @Override
@@ -163,10 +163,10 @@ public class FeedFragment extends Fragment {
                 Bitmap bitmap = BitmapFactory.decodeFile(
                         "sdcard/Pictures/MountainViews/Input/input" + mIndex + ".png");
                 inflate();
-                TextView userName = (TextView) mPhotoView.findViewById(com.erikterwiel.summitr.R.id.layout_photo_username);
-                TextView location = (TextView) mPhotoView.findViewById(com.erikterwiel.summitr.R.id.layout_photo_location);
-                ImageView imageView = (ImageView) mPhotoView.findViewById(com.erikterwiel.summitr.R.id.layout_photo_photo);
-                TextView caption = (TextView) mPhotoView.findViewById(com.erikterwiel.summitr.R.id.layout_photo_caption);
+                TextView userName = (TextView) mPhotoView.findViewById(R.id.layout_photo_username);
+                TextView location = (TextView) mPhotoView.findViewById(R.id.layout_photo_location);
+                ImageView imageView = (ImageView) mPhotoView.findViewById(R.id.layout_photo_photo);
+                TextView caption = (TextView) mPhotoView.findViewById(R.id.layout_photo_caption);
                 userName.setText(mRecents.get(mRecents.size() - mIndex).getUsername());
                 location.setText(mPhoto.getLocation());
                 caption.setText(mPhoto.getCaption());
@@ -229,14 +229,14 @@ public class FeedFragment extends Fragment {
                 Bitmap bitmap = BitmapFactory.decodeFile(
                         "sdcard/Pictures/MountainViews/Input/input" + mIndex + ".png");
                 inflate();
-                LinearLayout layout = (LinearLayout) mReportView.findViewById(com.erikterwiel.summitr.R.id.layout_report_layout);
-                TextView userName = (TextView) mReportView.findViewById(com.erikterwiel.summitr.R.id.layout_report_username);
-                TextView title = (TextView) mReportView.findViewById(com.erikterwiel.summitr.R.id.layout_report_title);
-                TextView location = (TextView) mReportView.findViewById(com.erikterwiel.summitr.R.id.layout_report_location);
-                ImageView imageView = (ImageView) mReportView.findViewById(com.erikterwiel.summitr.R.id.layout_report_photo);
-                TextView expand = (TextView) mReportView.findViewById(com.erikterwiel.summitr.R.id.layout_report_expand);
-                RecyclerView recycler = (RecyclerView) mReportView.findViewById(com.erikterwiel.summitr.R.id.layout_report_recycler);
-                TextView report = (TextView) mReportView.findViewById(com.erikterwiel.summitr.R.id.layout_report_report);
+                LinearLayout layout = (LinearLayout) mReportView.findViewById(R.id.layout_report_layout);
+                TextView userName = (TextView) mReportView.findViewById(R.id.layout_report_username);
+                TextView title = (TextView) mReportView.findViewById(R.id.layout_report_title);
+                TextView location = (TextView) mReportView.findViewById(R.id.layout_report_location);
+                ImageView imageView = (ImageView) mReportView.findViewById(R.id.layout_report_photo);
+                TextView expand = (TextView) mReportView.findViewById(R.id.layout_report_expand);
+                RecyclerView recycler = (RecyclerView) mReportView.findViewById(R.id.layout_report_recycler);
+                TextView report = (TextView) mReportView.findViewById(R.id.layout_report_report);
                 layout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -249,7 +249,7 @@ public class FeedFragment extends Fragment {
                 userName.setText(mRecents.get(mRecents.size() - mIndex).getUsername() + " - Trip Report");
                 title.setText(mReport.getTitle() + " - " + mReport.getDate());
                 location.setText(mReport.getLocation() + " - " + mReport.getDistance());
-                expand.setText(com.erikterwiel.summitr.R.string.layout_report_expand);
+                expand.setText(R.string.layout_report_expand);
                 imageView.setImageBitmap(bitmap);
                 mOuterLayout.addView(mReportView, mParams);
                 if (mRecents.size() - mIndex != 0) {

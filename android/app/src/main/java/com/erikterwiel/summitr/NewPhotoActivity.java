@@ -55,7 +55,7 @@ public class NewPhotoActivity extends AppCompatActivity {
 
         Log.i(TAG, "onCreate() called");
         super.onCreate(savedInstanceState);
-        setContentView(com.erikterwiel.summitr.R.layout.activity_new_photo);
+        setContentView(R.layout.activity_new_photo);
 
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 getApplicationContext(),
@@ -70,12 +70,12 @@ public class NewPhotoActivity extends AppCompatActivity {
         new PullUser().execute();
 
 
-        mCancel = (ImageView) findViewById(com.erikterwiel.summitr.R.id.new_photo_cancel);
-        mDone = (ImageView) findViewById(com.erikterwiel.summitr.R.id.new_photo_done);
-        mAdd = (Button) findViewById(com.erikterwiel.summitr.R.id.new_photo_add);
-        mImage = (ImageView) findViewById(com.erikterwiel.summitr.R.id.new_photo_image);
-        mCaption = (EditText) findViewById(com.erikterwiel.summitr.R.id.new_photo_caption);
-        mLocation = (EditText) findViewById(com.erikterwiel.summitr.R.id.new_photo_location);
+        mCancel = (ImageView) findViewById(R.id.new_photo_cancel);
+        mDone = (ImageView) findViewById(R.id.new_photo_done);
+        mAdd = (Button) findViewById(R.id.new_photo_add);
+        mImage = (ImageView) findViewById(R.id.new_photo_image);
+        mCaption = (EditText) findViewById(R.id.new_photo_caption);
+        mLocation = (EditText) findViewById(R.id.new_photo_location);
 
         mCancel.setOnClickListener(new View.OnClickListener() {
             @Override

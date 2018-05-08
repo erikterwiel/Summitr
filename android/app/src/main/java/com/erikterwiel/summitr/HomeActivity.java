@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Log.i(TAG, "onCreate() called");
         super.onCreate(savedInstanceState);
-        setContentView(com.erikterwiel.summitr.R.layout.activity_home);
+        setContentView(R.layout.activity_home);
 
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 getApplicationContext(),
@@ -53,12 +53,12 @@ public class HomeActivity extends AppCompatActivity {
         mMapper = new DynamoDBMapper(mDDBClient);
         new PullUser().execute();
 
-        mViewPager = (ViewPager) findViewById(com.erikterwiel.summitr.R.id.home_viewpager);
-        mTabLayout = (TabLayout) findViewById(com.erikterwiel.summitr.R.id.home_tabs);
-        mPlan = (FloatingActionButton) findViewById(com.erikterwiel.summitr.R.id.home_new_plan);
-        mPhoto = (FloatingActionButton) findViewById(com.erikterwiel.summitr.R.id.home_new_photo);
-        mReport = (FloatingActionButton) findViewById(com.erikterwiel.summitr.R.id.home_new_report);
-        mStart = (FloatingActionButton) findViewById(com.erikterwiel.summitr.R.id.home_start_trip);
+        mViewPager = (ViewPager) findViewById(R.id.home_viewpager);
+        mTabLayout = (TabLayout) findViewById(R.id.home_tabs);
+        mPlan = (FloatingActionButton) findViewById(R.id.home_new_plan);
+        mPhoto = (FloatingActionButton) findViewById(R.id.home_new_photo);
+        mReport = (FloatingActionButton) findViewById(R.id.home_new_report);
+        mStart = (FloatingActionButton) findViewById(R.id.home_start_trip);
 
         HomePagesAdapter adapter = new HomePagesAdapter(getSupportFragmentManager());
         adapter.addFragment(new FeedFragment(), "Feed");
@@ -105,8 +105,8 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             mDialog = ProgressDialog.show(HomeActivity.this,
-                    getString(com.erikterwiel.summitr.R.string.home_pulling),
-                    getString(com.erikterwiel.summitr.R.string.home_wait));
+                    getString(R.string.home_pulling),
+                    getString(R.string.home_wait));
         }
 
         @Override

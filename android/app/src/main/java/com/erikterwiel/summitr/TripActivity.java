@@ -35,7 +35,7 @@ public class TripActivity extends AppCompatActivity {
 
         Log.i(TAG, "onCreate() called");
         super.onCreate(savedInstanceState);
-        setContentView(com.erikterwiel.summitr.R.layout.activity_trip);
+        setContentView(R.layout.activity_trip);
 
         mCredentialsProvider = getCredProvider(this);
 

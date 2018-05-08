@@ -48,7 +48,7 @@ public class TrackerFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(com.erikterwiel.summitr.R.layout.fragment_tracker, container, false);
+        mView = inflater.inflate(R.layout.fragment_tracker, container, false);
 
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
                 getActivity().getApplicationContext(),
@@ -69,7 +69,7 @@ public class TrackerFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mMapView = (MapView) mView.findViewById(com.erikterwiel.summitr.R.id.tracker_map);
+        mMapView = (MapView) mView.findViewById(R.id.tracker_map);
         if (mMapView != null) {
             mMapView.onCreate(null);
             mMapView.onResume();

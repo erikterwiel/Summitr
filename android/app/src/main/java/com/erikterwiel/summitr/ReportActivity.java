@@ -32,13 +32,13 @@ public class ReportActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.erikterwiel.summitr.R.layout.activity_report);
+        setContentView(R.layout.activity_report);
 
-        mUsername = (TextView) findViewById(com.erikterwiel.summitr.R.id.report_username);
-        mTitle = (TextView) findViewById(com.erikterwiel.summitr.R.id.report_title);
-        mLocation = (TextView) findViewById(com.erikterwiel.summitr.R.id.report_location);
-        mRecycler = (RecyclerView) findViewById(com.erikterwiel.summitr.R.id.report_recycler);
-        mReportText = (TextView) findViewById(com.erikterwiel.summitr.R.id.report_body);
+        mUsername = (TextView) findViewById(R.id.report_username);
+        mTitle = (TextView) findViewById(R.id.report_title);
+        mLocation = (TextView) findViewById(R.id.report_location);
+        mRecycler = (RecyclerView) findViewById(R.id.report_recycler);
+        mReportText = (TextView) findViewById(R.id.report_body);
         mReport = new Report();
 
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
